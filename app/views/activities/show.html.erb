@@ -17,8 +17,9 @@
       <%= "Date: 20/02/2024"%><br>
       <%= "Time: 15h20"%><br>
     </p>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="mt-60 ms-5">
+    <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>
