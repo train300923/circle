@@ -1,11 +1,11 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.where((latitude-params).abs < 5, (longitude-params).abs < 5)
+    @activities = Activity.near(params[:query], 10)
   end
 
-def category
-  @category = Activity.category.find(params[])
-end
+  def category
+    @activities = Activity.where(params[:activity_category])
+  end
 
   def show
     @activity = Activity.find(params[:id])
