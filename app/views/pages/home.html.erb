@@ -1,4 +1,55 @@
-<h1>Pages#home</h1>
-<p><%= link_to "sign_in", new_user_session_path %></p>
-<p><%= link_to "sign_out", destroy_user_session_path %></p>
-<h3><%= link_to "Activities", activities_path %></h3>
+<div>
+  <% if user_signed_in? %>
+    <div class="col-12 align-self-start">
+      <%= form_with url: activities_path, method: :get, class: "searchbar" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              placeholder: "Where are you going?",
+              style: "width: 250px"
+          %>
+        <%= submit_tag "Go", name: "", class: "btn btn-outline" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to "Sign up", new_user_registration_path, class: "link-color btn small-btn" %>
+      <%= link_to "Sign in", new_user_session_path, class: "link-color btn small-btn btn-outline" %>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="container ">
+  <div class="row">
+    <div class="col align-self-start">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/health/wp-content/uploads/2023/07/hiking-apps.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Hiking in Slovenia</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+    </div>
+    <div class="col align-self-center">
+          <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/ec/fc/99/caption.jpg?w=1200&h=-1&s=1&cx=640&cy=370&chk=v1_03fe5c156914602bc202" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Dining in Paris</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+    </div>
+    <div class="col align-self-end">
+          <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://fh-sites.imgix.net/sites/5932/2019/04/24154715/Tour-Caballos-en-la-playa-6marzo2020-0167-e1679674304433.jpg?auto=compress%2Cformat&fit=crop&crop=faces&w=1200&h=900" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">horseback riding in Porto Rico</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
