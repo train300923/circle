@@ -1,4 +1,10 @@
 <h1>Activities' list</h1>
+<ul>
+<% activity_duplicates = [] %>
 <% @activities.each do |activity|%>
-  <%= activity.name %>
+<% activity_duplicates << activity.category %>
 <% end %>
+<% activity_duplicates.uniq.each do |activity_dry| %>
+<li><%= link_to activity_dry, activities_path %></li>
+<% end %>
+</ul>

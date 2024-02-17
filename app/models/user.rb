@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_many :bookings_as_participant, through: :participations, source: :bookings
   has_many :participations
   has_one_attached :photo
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
