@@ -14,7 +14,7 @@ class ActivitiesController < ApplicationController
       lat: @activity.latitude,
       lng: @activity.longitude,
       info_window_html: render_to_string(partial: "info_window", locals: {activity: @activity}),
-      marker_html: render_to_string(partial: "marker", locals: {activity: @activity})
+      marker_html: render_to_string(partial: "marker")
     }]
     end
   end
