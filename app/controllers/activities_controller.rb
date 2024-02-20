@@ -4,7 +4,8 @@ class ActivitiesController < ApplicationController
   end
 
   def category
-    @activities = Activity.where(params[:activity_category])
+    @activities = Activity.near(params[:query], 10)
+    @activities_category = Activity.where(category: params[:category])
   end
 
   def show

@@ -5,6 +5,6 @@
 <% activity_duplicates << activity.category %>
 <% end %>
 <% activity_duplicates.uniq.each do |activity_dry| %>
-<li><%= link_to activity_dry, activities_path %></li>
+<li><%= link_to activity_dry, category_activities_path(category: activity_dry) %></li>
 <% end %>
 </ul>
