@@ -1,10 +1,10 @@
 <div class="container">
-  <h1><strong>Here is your detailed choice</strong></h1>
+  <h1 pb-10><strong>Here is your detailed choice</strong></h1>
   <div class="container_photo">
     <%= cl_image_tag @activity.photo.key if @activity.photo.attached? %>
   </div>
   <div class="row">
-    <strong><%= "#{@activity.name}" %></strong>
+    <h2 id="left-alignment"><strong><%= "#{@activity.name}" %></strong></h2>
     <%= "#{@activity.description}" %>
   </div>
   <div class="row" id="btn-link">
@@ -14,11 +14,16 @@
   <div class="row" id="row-sub">
     <p justify-content="center" mt-30>
       Reservation details:<br>
-      <%= "Date: 20/02/2024"%><br>
-      <%= "Time: 15h20"%><br>
+      <%= "Date: #{Date.today+rand(50)}"%><br>
+      <%= "Time: #{Faker::Time.forward(days: 23, period: :evening).strftime("%I : %M PM")}"%><br>
+
+    <div>
+      <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
     </p>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>
