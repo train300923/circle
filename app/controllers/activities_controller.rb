@@ -40,9 +40,14 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  private
-
-  def set_query_param
-    @query_param = params[:query]
+  def potential_participants
+    @activities = Activity.last
+    @potential_participants = @user.near(@activities.city).where("preferred_activity_in?", [@activity.category])
   end
+end
+
+private
+
+def set_query_param
+  @query_param = params[:query]
 end

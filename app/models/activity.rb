@@ -1,6 +1,7 @@
 class Activity < ApplicationRecord
+  CATEGORIES = %w(Tennis Crossfit Opera)
   validates :name, presence: true
-  validates :category, presence: true
+  validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :price, presence: true
   validates :address, presence: true
   validates :description, presence: true
