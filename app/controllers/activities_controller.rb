@@ -18,4 +18,9 @@ class ActivitiesController < ApplicationController
     }]
     end
   end
+
+  def potential_participants
+    @activities = Activity.last
+    @potential_participants = @user.near(@activities.city).where("preferred_activity_in?", [@activity.category])
+  end
 end
