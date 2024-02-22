@@ -1,7 +1,7 @@
 <div>
   <% if user_signed_in? %>
     <div class="col-12 align-self-start">
-      <%= form_with url: activities_path, method: :get, class: "searchbar" do %>
+      <%= form_with url: category_list_activities_path, method: :get, class: "searchbar" do %>
         <%= text_field_tag :query,
               params[:query],
               placeholder: "Where are you going?",

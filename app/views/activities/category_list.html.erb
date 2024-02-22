@@ -1,0 +1,10 @@
+<h1>Proposed list of activities</h1>
+<ul>
+<% activity_duplicates = [] %>
+<% @activities.each do |activity|%>
+  <% activity_duplicates << activity.category %>
+<% end %>
+<% activity_duplicates.uniq.each do |activity_dry| %>
+  <li><%= link_to activity_dry, activities_info_activity_path(query: @city, category: activity_dry) %></li>
+<% end %>
+</ul>
