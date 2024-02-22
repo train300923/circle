@@ -16,8 +16,8 @@ guilhem = User.create(first_name: 'guilhem', last_name: 'maffre', address: '12 r
 kaouthar = User.create(first_name: 'kaouthar', last_name: 'elherch', address: '45 avenue du chateau 78000 versailles', phone_number: '0612486323', biography: "j'adore la gym!", latitude: '48.80528', longitude: '2.12227', email: 'kaouthar@circle.com', password: 'password2')
 ulrich = User.create(first_name: 'ulrich', last_name: 'johnson', address: '30 zedlitzgasse 1010 wien', phone_number: '0612486323', biography: "j'adore l'opera et la culture!", latitude: '48.20681', longitude: '16.37935', email: 'ulrich@circle.com', password: 'password3')
 sebastian = User.create(first_name: 'sebastian', last_name: 'kurz', address: 'rotgasse 10, 1010 Wien, Austria', phone_number: '0612486323', biography: "unique est la ville de vienne pour la culture", latitude: '48.21103', longitude: '16.37473', email: 'sebastian@circle.com', password: 'password4')
-
-
+tony = User.create(first_name: 'tony', last_name: 'de la casca', address: 'Habsburgergasse 7, 1010 Wien, Austria', phone_number: '0612486323', biography: "je suis ne et j'ai grandi dans cette ville qui est pour moi tout a fait speciale", latitude: '48.20809', longitude: '16.36825', email: 'tony@circle.com', password: 'password5')
+julien = User.create(first_name: 'julien', last_name: 'rodot', address: 'Schubertring 13, 1010 Wien, Austria', phone_number: '0612486323', biography: "nouveau venu dans cette ville, j'aimerai rencontrer de nouvelles personnes ayant des interets communs", latitude: '48.20206', longitude: '16.37481', email: 'julien@circle.com', password: 'password6')
 
 tennis1 = Activity.create(name: 'Tennis Club du Tourniquet', category: 'Tennis', description: 'Venez profitez de nos superbes equipements sportifs ainsi que de notre proximite avec le lac d Annecy', price: '40€', address: '40 Rue de Verdun 74940 Annecy-le-Vieux', latitude: '45.91032', longitude: '6.15853')
 tennis1_photo = URI.open("https://time.com/shopping/static/acf0d86662eed64a9e6c17d3429f0bca/57e17/best-tennis-rackets.jpg")
