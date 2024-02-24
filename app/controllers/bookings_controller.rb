@@ -32,7 +32,18 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to bookings_path
+    redirect_to booking_participants_path(@booking)
+  end
+
+  def add_participants
+    @booking = Booking.find(params[:id])
+
+    params[:participations][:participants].each do |id|
+      user = User.find(params[id])
+      @booking.participations << user
+    end
+
+    redirect_to booking_path(@booking)
   end
 
   def destroy
