@@ -1,6 +1,6 @@
 <h1>Activities' list</h1>
 <ul>
 <% @activities.each do |activity|%>
-  <li><%= link_to activity.name, activity_path(activity) %></li>
+  <li><%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %></li>
 <% end %>
 </ul>

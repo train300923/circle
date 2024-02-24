@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <%= link_to "◀︎ Back to activities", activities_path %>
+    </div>
+    <div class="col-4">
+      <h1>Here is your booking for <%= @booking.activity.name %></h1>
+
+      <ul class= "attributes">
+        <li><span class="activity-attribute">From: </span><%= @booking.start_date %></li>
+        <li><span class="activity-attribute">To: </span><%= @booking.end_date %></li>
+        <li><span class="activity-attribute">Status: </span><%= @booking.status.present? ? @booking.status : "pending" %></li>
+        <li><span class="activity-attribute">Description: </span><%= @booking.activity.description %></li>
+      </ul>
+      <div class="mt-4">
+        <%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %>
+        <%= link_to "Delete", booking_path(@booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-color btn btn-outline"%>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
