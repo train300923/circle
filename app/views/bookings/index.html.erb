@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Your bookings</h1>
+
+      <div id="Bookingd">
+        <ol class= "btn-list">
+        <% @bookings.each_with_index do |booking, index| %>
+            <div id="btn-navigation">
+            <div>
+            <li class= "btn" id= "btn-spacing"><%= link_to "booking n°#{index + 1} - Booking #{booking.start_date}", booking_path(booking), class: "link-color" %></li>
+            </div>
+            </div>
+        <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
