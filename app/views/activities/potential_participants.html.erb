@@ -1,15 +1,20 @@
-<h1>Choose your activity pals!</h1>
+<div class="container-sm p-0 m-0">
+  <h1>Choose your activity pals!</h1>
 
-<ul>
-  <% @potential_participants.each do |participant| %>
-  <li><%= participant.first_name %></li>
-  <%= cl_image_tag participant.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-</ul>
+  <div class="cards p-0 m-0">
+    <ul style="list-style-type: none">
+      <% @potential_participants.each do |participant| %>
+      <li><%= "#{participant.first_name} - #{participant.age}" %></li>
+      <li><%= participant.job %></li>
+      <%= cl_image_tag participant.photo.key, height: 75, width: 100, crop: :fill, id: "rounded-picture" %>
+      <% end %>
+    </ul>
+  </div>
 
-<div class="container">
-  <div class="row" id="btn-link">
-      <%= link_to "Back", activity_path, class: "btn small-btn" %>
-      <%= link_to "Go", activity_path, class: "btn small-btn" %>
+  <div class="container-sm">
+    <div class="row" id="btn-link">
+        <%= link_to "Back", activity_path, class: "btn small-btn" %>
+        <%= link_to "Go", activity_path, class: "btn small-btn" %>
+    </div>
   </div>
 </div>

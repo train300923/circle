@@ -13,3 +13,9 @@
   background-position: center center;
   height: 200px;
 }
+.cards-participants {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin-right: 50px;
+}
