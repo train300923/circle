@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-  before_action :set_query_param, only: [:index, :category, :info_activity]
 
   def index
     if params[:query]
@@ -18,14 +17,11 @@ class ActivitiesController < ApplicationController
   def category_list
     @activities = Activity.near(params[:query], 10)
     @city = params[:query]
-    # @activities_category = @activities.where(category: params[:category])
+    @categories = @activities.map(&:category)
+    @categories_dry = @categories.uniq
   end
 
   def info_activity
-    # @date = params[:date]
-    # @time = params[:time]
-    # @max_price = params[:maximum_price]
-    # redirect_to category_activities_path(date: @date, time: @time, maximum_price: @max_price, query_param: @query_param, category: params[:category])
   end
 
   def show
@@ -50,10 +46,4 @@ class ActivitiesController < ApplicationController
     @activities = Activity.last
     @potential_participants = @user.near(@activities.city).where("preferred_activity_in?", [@activity.category])
   end
-end
-
-private
-
-def set_query_param
-  @query_param = params[:query]
 end
