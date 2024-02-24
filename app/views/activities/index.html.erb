@@ -7,5 +7,6 @@
       <%= link_to activity.name, activity_path(activity) %>
     </div>
   </li>
+  <li><%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %></li>
 <% end %>
 </ul>
