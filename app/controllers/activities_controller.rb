@@ -45,7 +45,9 @@ class ActivitiesController < ApplicationController
     @users = User.all
     @potential_participants = @users.near(@activity.address).where(preferred_category: @activity.category)
   end
-end
+
+  def potential_part_selected
+  end
 
 private
 
@@ -53,6 +55,7 @@ def set_query_param
   @query_param = params[:query]
 end
 
+end
 
 
 # liste serpent pets

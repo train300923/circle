@@ -1,20 +1,26 @@
 <div class="container-sm p-0 m-0">
   <h1>Choose your activity pals!</h1>
 
-  <div class="cards p-0 m-0">
-    <ul style="list-style-type: none">
+
+  <div data-controller="circle-names">
+    <div class="cards-participants">
       <% @potential_participants.each do |participant| %>
-      <li><%= "#{participant.first_name} - #{participant.age}" %></li>
-      <li><%= participant.job %></li>
-      <%= cl_image_tag participant.photo.key, height: 75, width: 100, crop: :fill, id: "rounded-picture" %>
+        <div>
+          <div><%= "#{participant.first_name} - #{participant.age}" %></div>
+          <div><%= participant.job %></div>
+          <div data-circle-names-target="image" data-action="click->circle-names#fire">
+          <%= cl_image_tag participant.photo.key, height: 75, width: 100, crop: :fill, id: "rounded-picture" %>
+          </div>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
+
 
   <div class="container-sm">
     <div class="row" id="btn-link">
         <%= link_to "Back", activity_path, class: "btn small-btn" %>
-        <%= link_to "Go", activity_path, class: "btn small-btn" %>
+        <%= link_to "Go", potential_part_selected_activity_path, class: "btn small-btn" %>
     </div>
   </div>
 </div>

@@ -20,5 +20,8 @@ Rails.application.routes.draw do
     member do
       get :potential_participants
     end
+    member do
+      get :potential_part_selected
+    end
   end
 end
