@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <% if user_signed_in? %>
-          <%= form_with url: category_list_activities_path, method: :get, class: "searchbar d-flex align-items-center" do %>
+          <%= form_with url: category_list_activities_path, method: :get, class: "searchbar d-flex align-items-center my-2" do %>
             <%= text_field_tag :query,
                   params[:query],
                   placeholder: "Where are you going?",
@@ -38,4 +38,37 @@
     </div>
    </div>
   </div>
+  <div class="row">
+    <div class="col d-flex flex-column align-items-center">
+      <div class="homepagecard" style="width: 18rem;">
+      <div class="card-img-top">
+        <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/health/wp-content/uploads/2023/07/hiking-apps.jpg" alt="Card image cap">
+      </div>
+        <div class="card-body p-2">
+          <h5 class="card-title">Hiking in Slovenia</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+      <div class="homepagecard" style="width: 18rem;">
+          <div class="card-img-top">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/ec/fc/99/caption.jpg?w=1200&h=-1&s=1&cx=640&cy=370&chk=v1_03fe5c156914602bc202" alt="Card image cap">
+              </div>
+        <div class="card-body p-2">
+          <h5 class="card-title">Dining in Paris</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+      <div class="homepagecard" style="width: 18rem;">
+        <div class="card-img-top">
+          <img src="https://fh-sites.imgix.net/sites/5932/2019/04/24154715/Tour-Caballos-en-la-playa-6marzo2020-0167-e1679674304433.jpg?auto=compress%2Cformat&fit=crop&crop=faces&w=1200&h=900" alt="Card image cap">
+        </div>
+        <div class="card-body p-2">
+          <h5 class="card-title">horseback riding in Porto Rico</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+    </div>
 </div>
