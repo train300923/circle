@@ -16,4 +16,9 @@ Rails.application.routes.draw do
       get :category_list
     end
   end
+  resources :activities do
+    member do
+      get :potential_participants
+    end
+  end
 end
