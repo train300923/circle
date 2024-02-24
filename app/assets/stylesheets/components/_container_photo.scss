@@ -9,3 +9,15 @@ img {
   object-fit: cover;
 }
 }
+.container_photo_round {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  }

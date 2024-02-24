@@ -1,6 +1,11 @@
 <h1>Activities' list</h1>
 <ul>
 <% @activities.each do |activity|%>
-  <li><%= link_to activity.name, activity_path(activity) %></li>
+  <li>
+    <div class="container_photo">
+      <%= cl_image_tag activity.photo.key if activity.photo.attached? %>
+      <%= link_to activity.name, activity_path(activity) %>
+    </div>
+  </li>
 <% end %>
 </ul>
