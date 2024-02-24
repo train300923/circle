@@ -8,14 +8,17 @@
     <%= "#{@activity.description}" %>
   </div>
   <div class="row" id="btn-link">
-    <%= link_to "Back", activities_path, class: "btn small-btn" %>
-    <%= link_to "Choose", potential_participants_activity_path, class: "btn small-btn" %>
+    <%= link_to "Back", category_list_activities_path(city: @city, category: @category, date: @date, time: @time, max_price: @max_price), class: "btn small-btn" %>
+
+<%= button_to 'Choose', activity_bookings_path(@activity), {:method => :post, :form_class => "create"} %>
+
+
   </div>
   <div class="row" id="row-sub">
     <p justify-content="center" mt-30>
       Reservation details:<br>
-      <%= "Date: #{Date.today+rand(50)}"%><br>
-      <%= "Time: #{Faker::Time.forward(days: 23, period: :evening).strftime("%I : %M PM")}"%><br>
+      <%= "Date: #{@date}"%><br>
+      <%= "Time: #{@time}"%><br>
 
     <div>
       <div style="width: 100%; height: 600px;"

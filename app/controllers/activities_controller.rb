@@ -30,6 +30,12 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @date = params[:date]
+    @time = params[:time]
+    @max_price = params[:maximum_price].to_f
+    @city = params[:city]
+    @category = params[:category]
+
     if @activity.geocoded?
       @markers = [{
         lat: @activity.latitude,
