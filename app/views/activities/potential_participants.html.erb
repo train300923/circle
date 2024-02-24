@@ -1,4 +1,15 @@
-<h1>Potential participants</h1>
-<% @potential_participants.each do |participant| %>
-<%= participant.first_name %>
-<% end %>
+<h1>Choose your activity pals!</h1>
+
+<ul>
+  <% @potential_participants.each do |participant| %>
+  <li><%= participant.first_name %></li>
+  <%= cl_image_tag participant.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+</ul>
+
+<div class="container">
+  <div class="row" id="btn-link">
+      <%= link_to "Back", activity_path, class: "btn small-btn" %>
+      <%= link_to "Go", activity_path, class: "btn small-btn" %>
+  </div>
+</div>
