@@ -1,7 +1,7 @@
 <div class="container-sm">
+      <% if user_signed_in? %>
   <div class="row">
     <div class="col">
-      <% if user_signed_in? %>
           <%= form_with url: category_list_activities_path, method: :get, class: "searchbar d-flex align-items-center my-2" do %>
             <%= text_field_tag :query,
                   params[:query],
@@ -11,12 +11,6 @@
               %>
             <%= submit_tag "Go", name: "", class: "btn btn-primary" %>
           <% end %>
-      <% else %>
-        <div>
-          <%= link_to "Sign up", new_user_registration_path, class: "link-color btn small-btn" %>
-          <%= link_to "Sign in", new_user_session_path, class: "link-color btn small-btn btn-outline" %>
-        </div>
-      <% end %>
     </div>
   </div>
   <div class="row">
@@ -73,4 +67,20 @@
         </div>
       </div>
     </div>
+</div>
+     <% else %>
+          <div class="background">
+            <div class="white-fade">
+              <div>
+                <%= link_to "Sign up", new_user_registration_path, class: "link-color btn small-btn sign-in-sign-up" %>
+                <%= link_to "Sign in", new_user_session_path, class: "link-color btn small-btn btn-outline sign-in-sign-up" %>
+              </div>
+              <div>
+                <h1 class="h1-homepage" >Circle THE safe network for like-minded active women</h1>
+              </div>
+              <div class="circle-logo-big">
+                <%= image_tag "circle.png" %>
+              </div>
+          </div>
+      <% end %>
 </div>
