@@ -1,0 +1,11 @@
+<div class="container-sm background">
+  <div class="row justify-content-center">
+    <% if user_signed_in? %>
+      <%= link_to "Go!", pages_home_path, class: "small-btn-landing-page" %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "link-color btn small-btn sign-in-sign-up" %>
+      <%= link_to "Sign in", new_user_session_path, class: "link-color btn small-btn btn-outline sign-in-sign-up" %>
+    <% end %>
+  </div>
+  <div class="blank"></div>
+</div>
