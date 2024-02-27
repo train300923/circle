@@ -1,7 +1,6 @@
 <div class="container-sm">
   <div class="row">
     <div class="col">
-      <% if user_signed_in? %>
           <%= form_with url: category_list_activities_path, method: :get, class: "searchbar d-flex align-items-center my-2" do %>
             <%= text_field_tag :query,
                   params[:query],
@@ -11,12 +10,6 @@
               %>
             <%= submit_tag "Go", name: "", class: "btn btn-primary" %>
           <% end %>
-      <% else %>
-        <div>
-          <%= link_to "Sign up", new_user_registration_path, class: "link-color btn small-btn" %>
-          <%= link_to "Sign in", new_user_session_path, class: "link-color btn small-btn btn-outline" %>
-        </div>
-      <% end %>
     </div>
   </div>
   <div class="row">
@@ -73,4 +66,5 @@
         </div>
       </div>
     </div>
+  </div>
 </div>

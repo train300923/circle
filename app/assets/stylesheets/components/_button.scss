@@ -4,7 +4,22 @@
   margin-right: 0px;
   margin-left: 0px;
 }
-
+.small-btn-landing-page {
+  width: 150px;
+  height: 40px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  size: 30px;
+}
+.sign-in-sign-up {
+  border: 1px solid $gray;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
 #btn-link {
   display: flex;
   justify-content: space-between;

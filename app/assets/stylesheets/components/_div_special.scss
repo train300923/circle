@@ -1,0 +1,36 @@
+.background {
+  // background-image: url("https://images.pexels.com/photos/5935227/pexels-photo-5935227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-image: url("home_page_image.jpg");
+  background-size: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.white-fade {
+  height: 500px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  background: linear-gradient(to top, transparent 0%, white);
+}
+.white {
+  height: 125px;
+  width: 100%;
+  // position: fixed;
+  top: 510px;
+  background-color: white;
+}
+.blank {
+  height: 820px;
+  width: 100%;
+  margin: auto;
+}
+.circle-logo-big {
+  margin-top: 60px;
+  width: 100%;
+  height: 55%;
+  img {
+    width: 100%;
+    height: 55%;
+  }
+  }
