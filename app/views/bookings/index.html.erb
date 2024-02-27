@@ -1,19 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
       <h1>Your bookings</h1>
 
-      <div id="Bookingd">
-        <ol class= "btn-list">
-        <% @bookings.each_with_index do |booking, index| %>
-            <div id="btn-navigation">
-            <div>
-            <li class= "btn" id= "btn-spacing"><%= link_to "booking n°#{index + 1} - Booking #{booking.start_date}", booking_path(booking), class: "link-color" %></li>
-            </div>
-            </div>
-        <% end %>
-        </ol>
-      </div>
-    </div>
+
+        <table class="table table-sm table-striped " >
+
+          <thead class="thead-dark">
+            <tr>
+              <th>Booking</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @bookings.each_with_index do |booking, index| %>
+              <tr>
+                <td><%= link_to "Booking n°#{index + 1}", booking_path(booking), class: "link-color" %></td>
+                <td><%= "#{booking.start_date}" %></td>
+                <td><%= "#{booking.end_date}" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+
+        </table>
   </div>
 </div>
