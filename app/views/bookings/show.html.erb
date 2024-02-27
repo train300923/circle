@@ -1,23 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <%= link_to "◀︎ Back to activities", activities_path %>
     </div>
-    <div class="col-4">
-      <h1>Here is your booking for <%= @booking.activity.name %></h1>
-
-      <ul class= "attributes">
-        <li><span class="activity-attribute">From: </span><%= @booking.start_date %></li>
-        <li><span class="activity-attribute">To: </span><%= @booking.end_date %></li>
-        <li><span class="activity-attribute">Status: </span><%= @booking.status.present? ? @booking.status : "pending" %></li>
-        <li><span class="activity-attribute">Description: </span><%= @booking.activity.description %></li>
-      </ul>
-      <div class="mt-4">
-        <%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %>
-        <%= link_to "Delete", booking_path(@booking),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-color btn btn-outline"%>
-      </div>
-    </div>
-    <div class="col-4"></div>
+      <table class="table table-sm table-striped " >
+        <thead class="thead-dark">
+          <tr>
+            <th>Booking</th>
+            <th>Address</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @booking.activity.name %></td>
+            <td><%= @booking.activity.address %></td>
+            <td><%= @booking.activity.description %></td>
+            <td><%= @booking.start_date %></td>
+            <td><%= @booking.start_date %></td>
+            <td><%= @booking.activity.price %></td>
+            <td><%= @booking.status.present? ? @booking.status : "pending" %></td>
+            <td>
+              <button type="submit" name="action" value="edit"><%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %></button>
+              <button type="submit" name="action" value="delete"><%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-color btn" %></button>
+            </td>
+          </tr>
+        </tbody>
+</table>
   </div>
 </div>
