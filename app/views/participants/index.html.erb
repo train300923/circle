@@ -4,21 +4,30 @@
 
   <div>
     <%= simple_form_for :participations, url: add_participants_booking_path(@booking), method: :post do |f| %>
-      <%= f.input :participants, collection: @potential_participants.map { |el| [el.first_name, el.id] }, as: :check_boxes %>
+      <div class="cards-participants">
+        <% @potential_participants.each do |participant| %>
+          <div class="participant">
+            <%= f.check_box :participants, { id: "participant_#{participant.id}", class: "participant-checkbox" }, participant.id, nil %>
+            <%= label_tag "participant_#{participant.id}" do %>
+              <%= image_tag participant.photo, class: "participant-photo" %>
+              <%= ""%>
+              <br>
+              <%= "#{participant.first_name} - #{participant.age}"%>
+<br>
+              <%= "#{participant.job}"%>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
       <%= f.submit %>
     <% end %>
-
-
-    <%# <div class="cards-participants">
-
-    </div> %>
   </div>
-
+</div>
 
   <div class="container-sm">
     <div class="row" id="btn-link">
-        <%# <%= link_to "Back", activity_path, class: "btn small-btn" %>
-        <%# <%= link_to "Go", potential_part_selected_activity_path, class: "btn small-btn" %>
+        <%= link_to "Back", @activity_path, class: "btn small-btn"%>
+        <%= link_to "Go", @participant_path, class: "btn small-btn"%>
     </div>
   </div>
 </div>
