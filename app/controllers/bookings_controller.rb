@@ -48,7 +48,8 @@ class BookingsController < ApplicationController
   end
 
   def participants_selected
-
+    @booking = Booking.find(params[:id])
+    @participants = @booking.participations.includes(:user).map(&:user)
   end
 
   def destroy
