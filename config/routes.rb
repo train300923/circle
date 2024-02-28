@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     member do
       post :add_participants
     end
+    member do
+      get :participants_selected
+    end
   end
 
   resources :activities do

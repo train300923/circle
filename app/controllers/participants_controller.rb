@@ -5,7 +5,4 @@ class ParticipantsController < ApplicationController
                                   .near(@booking.activity.address)
                                   .where(preferred_category: @booking.activity.category)
   end
-
-  def show
-  end
 end

@@ -2,9 +2,11 @@
 <%= image_tag "circle.png", height: 86.6*2, width: 100*2%>
 <p>Enjoy your event with your safe new friends</p>
 
+<p>participants_selected</p>
+
 <div class="container-sm">
   <div class="row" id="btn-link">
-    <%= link_to "Back", potential_participants_activity_path, class: "btn small-btn" %>
-    <%= link_to "Event details", potential_part_selected_activity_path, class: "btn small-btn" %>
+    <%= link_to "Back", @booking_participants_path, class: "btn small-btn" %>
+    <%# <%= link_to "Event details", potential_part_selected_activity_path, class: "btn small-btn" %>
   </div>
 </div>

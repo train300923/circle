@@ -37,13 +37,17 @@ class BookingsController < ApplicationController
 
   def add_participants
     @booking = Booking.find(params[:id])
-
-    params[:participations][:participants].each do |id|
-      user = User.find(params[id])
-      @booking.participations << user
+    participant_ids = Array(params[:participations][:participants])
+    participant_ids.each do |user_id|
+      unless @booking.participations.exists?(user_id: user_id)
+        # Créez une nouvelle participation qui relie l'utilisateur au booking
+        @booking.participations.create(user_id: user_id)
+      end
     end
+    redirect_to participants_selected_booking_path(@booking)
+  end
 
-    redirect_to booking_path(@booking)
+  def participants_selected
   end
 
   def destroy

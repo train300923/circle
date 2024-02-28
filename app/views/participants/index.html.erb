@@ -9,7 +9,7 @@
           <div class="participant">
             <%= f.check_box :participants, { id: "participant_#{participant.id}", class: "participant-checkbox" }, participant.id, nil %>
             <%= label_tag "participant_#{participant.id}" do %>
-              <%= image_tag participant.photo, class: "participant-photo" %>
+              <%= image_tag participant.photo, class: "participant-photo", data: { user_id: participant.id } %>
               <%= ""%>
               <br>
               <%= "#{participant.first_name} - #{participant.age}"%>
@@ -27,7 +27,18 @@
   <div class="container-sm">
     <div class="row" id="btn-link">
         <%= link_to "Back", @activity_path, class: "btn small-btn"%>
-        <%= link_to "Go", @participant_path, class: "btn small-btn"%>
+        <%= link_to "Go", @participants_selected_booking_path, class: "btn small-btn"%>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.participant-photo').forEach(function(photo) {
+      photo.addEventListener('click', function() {
+        const checkBox = document.getElementById(`participant_${this.dataset.user_id}`);
+        checkBox.checked = !checkBox.checked; // Toggle the check state
+      });
+    });
+  });
+</script>

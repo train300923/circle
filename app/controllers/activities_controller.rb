@@ -42,15 +42,6 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  def potential_participants
-    @activity = Activity.last
-    @users = User.all
-    @potential_participants = @users.near(@activity.address).where(preferred_category: @activity.category)
-  end
-
-  def potential_part_selected
-  end
-
   private
 
   def set_query_param
