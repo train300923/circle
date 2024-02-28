@@ -48,6 +48,7 @@ class BookingsController < ApplicationController
   end
 
   def participants_selected
+
   end
 
   def destroy
