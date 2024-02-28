@@ -21,6 +21,7 @@
 
 .parent {
   position: relative;
+  padding: 0;
 }
 
 .circle {
@@ -31,7 +32,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 50%;
+  overflow: clip;
+  border-style: double;
+  border-color: $pink;
+  border-width: 10px;
+
+  img {
+    object-fit: cover;
+  }
 }
 
 * {
@@ -40,10 +48,10 @@
 
 .image-holder {
   width: 200px;
+  height: 200px;
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
   right: 0;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -61,47 +69,87 @@
 }
 
 .image-holder img:nth-child(1) {
-  top: -15px;
+  top: -1px;
   left: -15px;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-holder img:nth-child(3) {
-  top: -15px;
+  top: -1px;
   right: -15px;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-holder img:nth-child(5) {
-  bottom: -15px;
+  bottom: -1px;
   right: -15px;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-holder img:nth-child(7) {
-  bottom: -15px;
+  bottom: -1px;
   left: -15px;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-holder img:nth-child(2) {
-  top: -50px;
+  top: -40px;
   left: 50%;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
   transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-holder img:nth-child(4) {
   top: 50%;
-  right: -50px;
+  right: -40px;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
   transform: translateY(-50%);
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-holder img:nth-child(6) {
-  bottom: -50px;
+  bottom: -40px;
   left: 50%;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
   transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center;
 }
 
 .image-holder img:nth-child(8) {
   top: 50%;
-  left: -50px;
+  left: -40px;
+  border-style: outset;
+  border-width: 4px;
+  border-color: $pink;
   transform: translateY(-50%);
+  object-fit: cover;
+  object-position: center;
 }
 
 @keyframes rotate {

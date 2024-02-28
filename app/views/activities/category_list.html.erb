@@ -1,10 +1,11 @@
 <h1>Proposed list of activities</h1>
 <ul>
-<% activity_duplicates = [] %>
-<% @activities.each do |activity|%>
-  <% activity_duplicates << activity.category %>
-<% end %>
-<% activity_duplicates.uniq.each do |activity_dry| %>
-  <li><%= link_to activity_dry, activities_info_activity_path(query: @city, category: activity_dry) %></li>
+<% @categories_dry.each do |category_dry| %>
+  <li>
+    <div class="container_photo_round">
+      <%= cl_image_tag @activities.where(category: category_dry).first.photo.key if @activities.where(category: category_dry).first.photo.attached? %>
+      <%= link_to category_dry, activities_info_activity_path(query: @city, category: category_dry) %>
+    </div>
+  </li>
 <% end %>
 </ul>
