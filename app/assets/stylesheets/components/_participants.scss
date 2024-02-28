@@ -1,0 +1,16 @@
+.participant-checkbox {
+  display: none; /* Hide the actual checkbox */
+}
+
+.participant-photo {
+  cursor: pointer; /* Indicates the photo is clickable */
+  /* Add more styling as needed */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.participant-checkbox:checked + label > .participant-photo {
+  border: 2px solid #007bff; /* Bootstrap primary color */
+  box-shadow: 0 0 5px #007bff;
+}

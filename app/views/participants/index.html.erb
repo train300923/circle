@@ -1,0 +1,44 @@
+<div class="container-sm p-0 m-0">
+  <h1>Choose your activity pals!</h1>
+
+
+  <div>
+    <%= simple_form_for :participations, url: add_participants_booking_path(@booking), method: :post do |f| %>
+      <div class="cards-participants">
+        <% @potential_participants.each do |participant| %>
+          <div class="participant">
+            <%= f.check_box :participants, { id: "participant_#{participant.id}", class: "participant-checkbox" }, participant.id, nil %>
+            <%= label_tag "participant_#{participant.id}" do %>
+              <%= image_tag participant.photo, class: "participant-photo", data: { user_id: participant.id } %>
+              <%= ""%>
+              <br>
+              <%= "#{participant.first_name} - #{participant.age}"%>
+              <br>
+              <%= "#{participant.job}"%>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+
+  <div class="container-sm">
+    <div class="row" id="btn-link">
+        <%= link_to "Back", @activity_path, class: "btn small-btn"%>
+        <%= link_to "Go", @participants_selected_booking_path, class: "btn small-btn"%>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.participant-photo').forEach(function(photo) {
+      photo.addEventListener('click', function() {
+        const checkBox = document.getElementById(`participant_${this.dataset.user_id}`);
+          checkBox.checked = !checkBox.checked;
+      });
+    });
+  });
+</script>

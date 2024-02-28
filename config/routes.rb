@@ -10,8 +10,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
   get "pages/home", to: "pages#home"
-  resources :bookings, only: [:index, :show, :edit, :update, :destroy]
+
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
+    resources :participants
+    member do
+      post :add_participants
+    end
+    member do
+      get :participants_selected
+    end
+  end
 
   resources :activities do
     resources :bookings, only: [:new, :create]
@@ -19,4 +29,13 @@ Rails.application.routes.draw do
       get :category_list
     end
   end
+
+  # resources :activities do
+  #   member do
+  #     get :potential_participants
+  #   end
+  #   member do
+  #     get :potential_part_selected
+  #   end
+  # end
 end

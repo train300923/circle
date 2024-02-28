@@ -38,12 +38,36 @@ class ActivitiesController < ApplicationController
         lng: @activity.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {activity: @activity}),
         marker_html: render_to_string(partial: "marker")
-    }]
+      }]
     end
   end
 
-  def potential_participants
-    @activities = Activity.last
-    @potential_participants = @user.near(@activities.city).where("preferred_activity_in?", [@activity.category])
+  private
+
+  def set_query_param
+    @query_param = params[:query]
   end
+
 end
+
+
+# liste serpent pets
+# = lost kitty
+# 12-13 janvier livecode
+
+# collection acitivies::categories
+
+# activities controller
+# @activity = Activity.last
+# @potential participants = @user.near(@activity.city).where("preferred_activities in?", [@acitivity.category])
+
+# view custom
+# activities
+
+# potential_participant view custom, controller user (ou activities controller), routes custom
+# neste ds activities car activiti id
+# user.near ac activity.city dont pref activity.ctegorey
+# @acitivity.find(params id)
+# @POTENTIAL PARTICIP = user.near.preferr category
+
+# date pr activity

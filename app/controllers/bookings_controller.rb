@@ -32,7 +32,24 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to bookings_path
+    redirect_to booking_participants_path(@booking)
+  end
+
+  def add_participants
+    @booking = Booking.find(params[:id])
+    participant_ids = Array(params[:participations][:participants])
+    participant_ids.each do |user_id|
+      unless @booking.participations.exists?(user_id: user_id)
+        # Créez une nouvelle participation qui relie l'utilisateur au booking
+        @booking.participations.create(user_id: user_id)
+      end
+    end
+    redirect_to participants_selected_booking_path(@booking)
+  end
+
+  def participants_selected
+    @booking = Booking.find(params[:id])
+    @participants = @booking.participations.includes(:user).map(&:user)
   end
 
   def destroy

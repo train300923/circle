@@ -2,7 +2,6 @@
 margin-bottom: 0.5rem;
 }
 
-
 .homepagecard{
   margin-bottom: 0.5rem;
   height: 350px;
@@ -36,4 +35,20 @@ margin-bottom: 0.5rem;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   margin-right: 50px;
+}
+.card-img-top {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 200px;
+}
+.cards-participants {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+@media(max-width: 992px) {
+  .cards-participants {
+    grid-template-columns: 1fr 1fr;
+  }
 }
