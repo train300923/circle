@@ -5,18 +5,14 @@
   <div>
     <%= simple_form_for :participations, url: add_participants_booking_path(@booking), method: :post do |f| %>
       <div class="cards-participants">
-        <% @potential_participants.each do |participant| %>
-          <div class="participant">
-            <%= f.check_box :participants, { id: "participant_#{participant.id}", class: "participant-checkbox" }, participant.id, nil %>
-            <%= label_tag "participant_#{participant.id}" do %>
-              <%= image_tag participant.photo, class: "participant-photo", data: { user_id: participant.id } %>
-              <%= ""%>
-              <br>
-              <%= "#{participant.first_name} - #{participant.age}"%>
-              <br>
-              <%= "#{participant.job}"%>
-            <% end %>
-          </div>
+        <%= collection_check_boxes :participations, :participants, @potential_participants, :id, :id do |b| %>
+          <% participant = b.object %>
+          <% b.label do %>
+            <%= b.check_box %>
+            <%= image_tag participant.photo, class: "participant-photo", data: { user_id: participant.id } %>
+            <div><%= participant.first_name %> - <%= participant.age %></div>
+            <div><%= participant.job %></div>
+          <% end %>
         <% end %>
       </div>
       <%= f.submit %>
@@ -31,14 +27,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.participant-photo').forEach(function(photo) {
-      photo.addEventListener('click', function() {
-        const checkBox = document.getElementById(`participant_${this.dataset.user_id}`);
-          checkBox.checked = !checkBox.checked;
-      });
-    });
-  });
-</script>
