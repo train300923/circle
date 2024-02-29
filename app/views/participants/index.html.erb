@@ -15,15 +15,17 @@
           <% end %>
         <% end %>
       </div>
+      <div id="button-save-participations">
+      <%= link_to "Back", :back, class: "btn small-btn"%>
       <%= f.submit %>
+      </div>
     <% end %>
   </div>
 </div>
 
   <div class="container-sm">
     <div class="row" id="btn-link">
-        <%= link_to "Back", @activity_path, class: "btn small-btn"%>
-        <%= link_to "Go", @participants_selected_booking_path, class: "btn small-btn"%>
+        <%# <%= link_to "Go", @participants_selected_booking_path, class: "btn small-btn"%>
     </div>
   </div>
 </div>
