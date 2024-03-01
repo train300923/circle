@@ -2,7 +2,7 @@
 <div class="grid">
 <% @categories_dry.each do |category_dry| %>
     <div class="container card-photo">
-    <div class="row container_photo_round">
+    <div class="row container-photo-round">
       <%= cl_image_tag @activities.where(category: category_dry).first.photo.key if @activities.where(category: category_dry).first.photo.attached? %>
     </div>
     <div class="row card-text-photo">
