@@ -52,3 +52,12 @@ margin-bottom: 0.5rem;
     grid-template-columns: 1fr 1fr;
   }
 }
+.card-photo{
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+.card-text-photo{
+  text-align: center;
+}

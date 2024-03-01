@@ -1,11 +1,18 @@
 <h1>We are letting your pals know!</h1>
-<%= image_tag "circle.png", height: 86.6*2, width: 100*2%>
 
-<% @participants.each do |participant| %>
-<%= image_tag participant.photo, class: "participant-photo" %>
-<% end %>
-
-<p>Enjoy your event with your safe new friends</p>
+<div class="grid">
+  <% @participants.each do |participant| %>
+  <div class="container card-photo">
+    <div class="container_photo_round">
+      <%= image_tag participant.photo, class: "participant-photo" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="row">
+<%= image_tag "hourglass.png" %>
+</div>
+<h3>You'll soon be able to enjoy your activity with your safe new friends!</h3>
 
 <div class="container-sm">
   <div class="row" id="btn-link">
