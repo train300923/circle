@@ -21,12 +21,18 @@
       <% end %>
       </div>
       <div class="image-holder">
-        <img data-text="A" src="https://images.pexels.com/photos/7275385/pexels-photo-7275385.jpeg?auto=compress&cs=tinysrgb&h=204&fit=crop&w=228&dpr=2" alt="">
+        <%= cl_image_tag @users_memory[0].photo.key %>
+        <%= cl_image_tag @users_memory[1].photo.key %>
+        <%= cl_image_tag @users_memory[2].photo.key %>
+        <%= cl_image_tag @users_memory[3].photo.key %>
+        <%= cl_image_tag @users_memory[4].photo.key %>
+        <%= cl_image_tag @users_memory[5].photo.key %>
+        <%# <img data-text="A" src="https://images.pexels.com/photos/7275385/pexels-photo-7275385.jpeg?auto=compress&cs=tinysrgb&h=204&fit=crop&w=228&dpr=2" alt="">
         <img data-text="B" src="https://images.pexels.com/photos/8993561/pexels-photo-8993561.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=252&fit=crop&h=408" alt="">
         <img data-text="C" src="https://images.pexels.com/photos/5682847/pexels-photo-5682847.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
         <img data-text="D" src="https://images.pexels.com/photos/4946515/pexels-photo-4946515.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
         <img data-text="E" src="https://images.pexels.com/photos/4420634/pexels-photo-4420634.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
-        <img data-text="F" src="https://images.pexels.com/photos/5615665/pexels-photo-5615665.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+        <%# <img data-text="F" src="https://images.pexels.com/photos/5615665/pexels-photo-5615665.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""> %>
         <img data-text="G" src="https://images.pexels.com/photos/3444087/pexels-photo-3444087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
         <img data-text="H" src="https://images.pexels.com/photos/3646160/pexels-photo-3646160.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
       </div>
