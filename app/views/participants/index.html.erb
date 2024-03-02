@@ -1,7 +1,6 @@
 <div class="container-sm p-0 m-0">
   <h1>Choose your activity pals!</h1>
 
-
   <div>
     <%= simple_form_for :participations, url: add_participants_booking_path(@booking), method: :post do |f| %>
       <div class="cards-participants">
@@ -10,8 +9,10 @@
           <% b.label do %>
             <div class="container card-photo">
               <div class="row container-photo-round">
-                <%= b.check_box %>
+                <%= b.check_box class: "checkbox" %>
+                <label>
                 <%= image_tag participant.photo, class: "participant-photo", data: { user_id: participant.id } %>
+                </label>
               </div>
               <div class="row card-text-photo">
                 <%= participant.first_name %> - <%= participant.age %>yo
@@ -30,9 +31,4 @@
   </div>
 </div>
 
-  <div class="container-sm">
-    <div class="row" id="btn-link">
-        <%# <%= link_to "Go", @participants_selected_booking_path, class: "btn small-btn"%>
-    </div>
-  </div>
 </div>

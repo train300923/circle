@@ -19,8 +19,13 @@ img {
     border-radius: 50%;
     object-fit: cover;
     padding: 0px;
-  }
-  }
+    }
+}
+
+.checkbox {
+  opacity: 0;
+}
+
 
 .grid{
   display: grid;
