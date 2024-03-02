@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 pb-10><strong>Check details and location:</strong></h1>
+  <h1 pb-10><strong>Check details and location</strong></h1>
   <div class="container_photo">
     <%= cl_image_tag @activity.photo.key if @activity.photo.attached? %>
   </div>
@@ -8,15 +8,22 @@
     <p class="description"><%= "#{@activity.description}" %></p>
   </div>
   <div class="row" id="btn-link">
-    <div class="small-btn"><%= button_to 'Reviews', activity_reviews_path(@activity), {:method => :get, :form_class => "index"} %></div>
-    <div class="small-btn"><%= button_to 'Go!', activity_bookings_path(@activity), {:method => :post, :form_class => "create"} %></div>
+
+  <%# <div> %>
+  <%# <%= button_to "Go!", activity_bookings_path(@activity), method: :post, form_class: "create" %>
+  <%# </div> %>
+  <div class="small-btn"><%= button_to 'Reviews', activity_reviews_path(@activity), {:method => :get, :form_class => "index"} %></div>
+  <div>
+  <%= button_to "Go", activity_bookings_path(@activity), class: 'submit-button', method: :post, form_class: "create" %>
+</div>
+
   </div>
   <div class="row" id="row-sub">
-    <p justify-content="center" mt-30>
+    <div id="reservation-details-box">
       Reservation details:<br>
       <%= "Date: #{@date}"%><br>
       <%= "Time: #{@time}"%><br>
-    </p>
+    </div>
     <div>
       <div style="width: 100%; height: 200px;"
       data-controller="map"

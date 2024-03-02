@@ -20,8 +20,11 @@ img {
     border-radius: 50%;
     object-fit: cover;
     padding: 0px;
-  }
-  }
+    }
+}
+.checkbox {
+  opacity: 0;
+}
   .container_photo_review {
     display: flex;
     justify-content: center;
@@ -43,7 +46,7 @@ img {
       object-fit: cover;
     }
     }
-.grid{
+.grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
