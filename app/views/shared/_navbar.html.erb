@@ -4,9 +4,11 @@
       <%= image_tag "circle_only_logo_remove_bg.png" %>
     <% end %>
 
+    <% if user_signed_in? && current_user.photo.attached? %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <%= image_tag current_user.photo, alt: current_user.first_name, class: "navbar-avatar" %>
     </button>
+    <% end %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">

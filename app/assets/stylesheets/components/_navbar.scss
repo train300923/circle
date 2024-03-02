@@ -10,3 +10,14 @@
 .navbar-lewagon .navbar-brand img {
   width: 100px;
 }
+
+.navbar-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+.navbar-toggler {
+  border: none; /* Removes any borders */
+}
