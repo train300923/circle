@@ -1,9 +1,18 @@
-.background {
+.container-sm.background {
+  position: relative;
   // background-image: url("https://images.pexels.com/photos/5935227/pexels-photo-5935227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-image: url("home_page_image.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
+  height: 100vh;
+}
+.positioned-above {
+  position: absolute;
+  top: 90px; /* Adjust this value to position the button higher or lower */
+  left: 54%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust horizontally to truly center based on the element's width */
+  z-index: 10; /* Ensure it's above the background */
 }
 .white-fade {
   height: 500px;
