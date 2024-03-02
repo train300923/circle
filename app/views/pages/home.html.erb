@@ -68,3 +68,20 @@
     </div>
   </div>
 </div>
+
+<div class="relative" data-controller="carousel">
+  <div class="absolute left-0 bottom-0 top-0 flex items-center">
+    <button type="button" class="rounded-full bg-gray-300"><!-- previous icon --></button>
+  </div>
+  <div class="absolute right-0 bottom-0 top-0 flex items-center">
+    <button type="button" class="rounded-full bg-gray-300"><!-- next icon --></button>
+  </div>
+    <div data-carousel-target="image">
+      <%=
+        turbo_frame_tag "photo",
+          class: "absolute top-0 left-0 right-0 bottom-0",
+          src: "https://fh-sites.imgix.net/sites/5932/2019/04/24154715/Tour-Caballos-en-la-playa-6marzo2020-0167-e1679674304433.jpg?auto=compress%2Cformat&fit=crop&crop=faces&w=1200&h=900",
+          loading: :lazy
+        %>
+    </div>
+</div>

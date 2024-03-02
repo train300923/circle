@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+  get 'reviews/show'
   devise_for :users
   root to: "pages#landing_page"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
     collection do
       get :category_list
     end
+    resources :reviews
   end
 
   # resources :activities do
