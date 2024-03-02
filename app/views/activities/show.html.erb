@@ -8,10 +8,8 @@
     <p class="description"><%= "#{@activity.description}" %></p>
   </div>
   <div class="row" id="btn-link">
-
-  <div class="small-btn"><%= button_to 'Go!', activity_bookings_path(@activity), {:method => :post, :form_class => "create"} %></div>
-
-
+    <div class="small-btn"><%= button_to 'Reviews', activity_reviews_path(@activity), {:method => :get, :form_class => "index"} %></div>
+    <div class="small-btn"><%= button_to 'Go!', activity_bookings_path(@activity), {:method => :post, :form_class => "create"} %></div>
   </div>
   <div class="row" id="row-sub">
     <p justify-content="center" mt-30>

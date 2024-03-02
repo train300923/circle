@@ -43,7 +43,7 @@ tennis3 = Activity.create(name: 'Tennis Club de Beziers', category: CATEGORY[0],
 tennis3_photo = URI.open("https://www.beziers-mediterranee.com/wp-content/uploads/wpetourisme/Tennis-Club-Biterrois--3-.jpg")
 tennis3.photo.attach(io: tennis3_photo, filename: "tennis3.png", content_type: "image/png")
 tennis4 = Activity.create(name: 'Tennis Club de Versailles', category: CATEGORY[0], description: 'Venez faire du sport dans notre club, nous vous accueillons du lundi au samedi de 9h a 18h, et apres le sport, le reconfort, nous vous offrons un pastis pour etancher votre soif', price: 15, address: '57 Rue Rémont, 78000 Versailles', latitude: '48.79200', longitude: '2.15454')
-tennis4_photo = URI.open("https://www.tcgrandversailles.fr/file/si603679/Installations-fi14979208x330.JPG")
+tennis4_photo = URI.open("https://84de40cca0.clvaw-cdnwnd.com/2816fb981103aa50e4c4b5b65ca32a61/200000018-79d7c79d7e/19cce3b5-6aaa-4c98-a488-2a19cf58ad0a.jpg?ph=84de40cca0")
 tennis4.photo.attach(io: tennis4_photo, filename: "tennis4.png", content_type: "image/png")
 
 crossfit1 = Activity.create(name: 'Gymclub de Versailles', category: CATEGORY[1], description: 'Activite de gym tres energetique qui va vous faire demarrer la journee sur le bon pied!', price: 10, address: "15 Rue d'Anjou 78000 Versailles", latitude: '48.79739', longitude: '2.12640')
@@ -72,4 +72,11 @@ opera4 = Activity.create(name: 'Vienna State Opera', category: CATEGORY[2], desc
 opera4_photo = URI.open("https://m-festival.biz/en/wp-content/uploads/2023/04/323927622_5694523843997527_6046703828531623519_n.jpeg")
 opera4.photo.attach(io: opera4_photo, filename: "opera4.png", content_type: "image/png")
 
-[tennis1, tennis2, tennis3, tennis4, crossfit1, crossfit2, crossfit3, crossfit4, opera1, opera2, opera3, opera4].each(&:save)
+review1 = Review.create(rating: 5, content: "Wow!! Amazing experience! Worth going there just for the building :) I couldn't stop looking at the ceiling before the show started!!")
+review1.user = svetlana
+review1.activity = opera4
+review1_photo1 = URI.open("https://www.myo.org/wp-content/uploads/2015/03/Vienna-State-Opera-House.jpg")
+review1.photos.attach(io: review1_photo1, filename: "review1photo1.png", content_type: "image/png")
+review1_photo2 = URI.open("https://i0.wp.com/www.whiskiedwanderlust.com/wp-content/uploads/2015/03/Vienna-Opera_Foyer.jpg?resize=600%2C450&ssl=1")
+review1.photos.attach(io: review1_photo2, filename: "review1photo2.png", content_type: "image/png")
+[tennis1, tennis2, tennis3, tennis4, crossfit1, crossfit2, crossfit3, crossfit4, opera1, opera2, opera3, opera4, review1].each(&:save)

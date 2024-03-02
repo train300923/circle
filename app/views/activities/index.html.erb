@@ -1,9 +1,11 @@
 <h1>Now, up to you!</h1>
 <div class="container">
-  <% @activities.each do |activity|%>
-      <div class="container_photo">
-        <%= cl_image_tag activity.photo.key if activity.photo.attached? %>
-      </div>
-        <%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %>
+  <% if !@activities.nil? %>
+    <% @activities.each do |activity|%>
+        <div class="container_photo">
+          <%= cl_image_tag activity.photo.key if activity.photo.attached? %>
+        </div>
+          <%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %>
+    <% end %>
   <% end %>
 </div>
