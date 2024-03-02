@@ -8,15 +8,22 @@
         <%= collection_check_boxes :participations, :participants, @potential_participants, :id, :id do |b| %>
           <% participant = b.object %>
           <% b.label do %>
-            <%= b.check_box %>
-            <%= image_tag participant.photo, class: "participant-photo", data: { user_id: participant.id } %>
-            <div><%= participant.first_name %> - <%= participant.age %></div>
-            <div><%= participant.job %></div>
+            <div class="container card-photo">
+              <div class="row container-photo-round">
+                <%= b.check_box %>
+                <%= image_tag participant.photo, class: "participant-photo", data: { user_id: participant.id } %>
+              </div>
+              <div class="row card-text-photo">
+                <%= participant.first_name %> - <%= participant.age %>
+              </div>
+              <div class="row card-text-photo">
+                <%= participant.job %>
+              </div>
+            </div>
           <% end %>
         <% end %>
       </div>
       <div id="button-save-participations">
-      <%= link_to "Back", :back, class: "btn small-btn"%>
       <%= f.submit %>
       </div>
     <% end %>

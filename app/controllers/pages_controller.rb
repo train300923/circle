@@ -5,9 +5,6 @@ class PagesController < ApplicationController
     @random_activity = Activity.all.sample(1).sole
   end
 
-  def show_navbar?
-    false
+  def landing_page
   end
-
-  helper_method :show_navbar?
 end
