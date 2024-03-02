@@ -47,25 +47,19 @@
   size: 30px;
   margin: 0 auto; /* Automatically calculate left and right margins */
 }
-
-
-
-// .link-color {
-//   color: #000;
-// }
-// .small-btn {
-//   width: 150px;
-//   height: 40px;
-//   margin-right: 20px;
-//   margin-left: 0px;
-//   a:link {
-//     color: black;
-//     text-decoration: none;
-//     font-size: 18px;
-//   }
-// }
-// .btn-outline {
-//   border: solid 1px $green;
-//   background-color: $dark-gray;
-//   color: $green;
-// }
+.submit-button-lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCBAD3;
+  color: $black;
+  border-radius: 15px;
+  width: 200px;
+  height: 40px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  size: 30px;
+  margin: 0 auto; /* Automatically calculate left and right margins */
+}
