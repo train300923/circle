@@ -5,7 +5,9 @@
         <div class="container_photo">
           <%= cl_image_tag activity.photo.key if activity.photo.attached? %>
         </div>
-          <%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %>
+        <div id="activity-photo">
+        <div id="activity-title"><%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %></div>
+        </div>
     <% end %>
   <% end %>
 </div>

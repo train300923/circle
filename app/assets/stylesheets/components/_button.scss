@@ -5,13 +5,18 @@
   margin-left: 0px;
 }
 .small-btn-landing-page {
-  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCBAD3;
+  color: $black;
+  border-radius: 15px;
+  width: 100px;
   height: 40px;
   margin-right: 0px;
   margin-left: 0px;
   margin-bottom: 0px;
   margin-top: 0px;
-  text-align: center;
   size: 30px;
 }
 .sign-in-sign-up {
@@ -24,4 +29,42 @@
 #btn-link {
   display: flex;
   justify-content: space-between;
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCBAD3;
+  color: $black;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  size: 30px;
+  margin: 0 auto; /* Automatically calculate left and right margins */
+}
+.submit-button-lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCBAD3;
+  color: $black;
+  border-radius: 15px;
+  width: 200px;
+  height: 40px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  size: 30px;
+  margin: 0 auto; /* Automatically calculate left and right margins */
+}
+
+#button-save-participations {
+  text-align: right;
+  margin-top: 50px;
 }

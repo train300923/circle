@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #F5EEE6;
+  background: linear-gradient(to left, transparent -20%, purple);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,26 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 100px;
+  width: 50px;
+}
+
+.navbar-brand {
+  background: transparent;
+}
+
+.navbar-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+.navbar-toggler {
+  border: none; /* Removes any borders */
+}
+.nav-item {
+  padding-top: 15px;
+}
+.dropdown-item {
+  text-align: right;
 }
