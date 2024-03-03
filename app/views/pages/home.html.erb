@@ -13,7 +13,10 @@
     </div>
   </div>
   <div class="row">
-   <div class="d-flex justify-content-center my-5 py-5">
+  <div class="col-12 pb-0 mb-0 mt-1">
+  <h2><strong>Memories</h2>
+  </div>
+   <div class="d-flex justify-content-center my-5 py-0">
     <div class="parent">
       <div class="circle" id="sample-text">
       <% if @random_activity.photo.attached? %>
@@ -27,19 +30,16 @@
         <%= cl_image_tag @users_memory[3].photo.key %>
         <%= cl_image_tag @users_memory[4].photo.key %>
         <%= cl_image_tag @users_memory[5].photo.key %>
-        <%# <img data-text="A" src="https://images.pexels.com/photos/7275385/pexels-photo-7275385.jpeg?auto=compress&cs=tinysrgb&h=204&fit=crop&w=228&dpr=2" alt="">
-        <img data-text="B" src="https://images.pexels.com/photos/8993561/pexels-photo-8993561.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=252&fit=crop&h=408" alt="">
-        <img data-text="C" src="https://images.pexels.com/photos/5682847/pexels-photo-5682847.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
-        <img data-text="D" src="https://images.pexels.com/photos/4946515/pexels-photo-4946515.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
-        <img data-text="E" src="https://images.pexels.com/photos/4420634/pexels-photo-4420634.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
-        <%# <img data-text="F" src="https://images.pexels.com/photos/5615665/pexels-photo-5615665.jpeg?auto=compress&cs=tinysrgb&w=800" alt=""> %>
-        <img data-text="G" src="https://images.pexels.com/photos/3444087/pexels-photo-3444087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
-        <img data-text="H" src="https://images.pexels.com/photos/3646160/pexels-photo-3646160.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+        <%= cl_image_tag @users_memory[6].photo.key %>
+        <%= cl_image_tag @users_memory[7].photo.key %>
       </div>
     </div>
    </div>
   </div>
   <div class="row">
+  <div class="col-12 py-0 mt-3 mb-3">
+  <h2><strong>Getting inspired</h2>
+  </div>
     <div class="col d-flex flex-column align-items-center">
       <div class="homepagecard" style="width: 18rem;">
       <div class="card-img-top">

@@ -7,20 +7,11 @@
       </div>
     </div>
   </div>
-    <div class="col-12  text-align-left">
-      <div class="d-flex justify-content-start">
-        <p class="circle-comment"><%= "Posted by #{review.user.first_name} on January 14:" %></p>
-      </div>
+  <div class="col-12  text-align-left">
+    <div class="d-flex justify-content-start">
+      <p class="circle-comment"><%= "Posted by #{review.user.first_name} on January 14:" %></p>
     </div>
-  <% if review.photos.attached? %>
-    <% review.photos.each do |photo| %>
-      <div class="container_photo_review">
-        <%= cl_image_tag photo.key %>
-      </div>
-    <% end %>
-  <% else %>
-  <%= "No photos to show" %>
-  <% end %>
+  </div>
   <div class="col-12">
     <div class="row content-rating">
       <p class="rating">
@@ -37,6 +28,15 @@
     <div class="row content-rating">
       <p class="content"><%= review.content %></p>
     </div>
+  <% if review.photos.attached? %>
+    <% review.photos.each do |photo| %>
+      <div class="container_photo_review">
+        <%= cl_image_tag photo.key %>
+      </div>
+    <% end %>
+  <% else %>
+  <%= "No photos to show" %>
+  <% end %>
 <% end %>
 <%# <div class="button-link"><%= link_to "Back to description", activity_path(:activity_id)</div> %>
 </div>
