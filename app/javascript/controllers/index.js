@@ -11,7 +11,7 @@ eagerLoadControllersFrom("controllers", application)
 // lazyLoadControllersFrom("controllers", application)
 
 import { Application } from '@hotwired/stimulus'
-import Carousel from 'stimulus-carousel'
+// import Carousel from '../vendor/javascript/stimulus-carousel'
 
 const application = Application.start()
 application.register('carousel', Carousel)
