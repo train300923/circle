@@ -1,7 +1,10 @@
 <div class="container" id="form-format">
   <div class="row justify-content-center">
     <%= simple_form_for(:search, url: activities_path, method: :get) do |f| %>
-      <%= f.input :date %>
+      <%# <%= f.input :date %>
+      <%= f.input :date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
       <%= f.input :time %>
       <%= f.input :maximum_price %>
       <%= f.hidden_field :city, value: params[:query] %>
