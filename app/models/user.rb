@@ -8,10 +8,10 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :phone_number, presence: true
   validates :biography, presence: true
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :bookings_as_participant, through: :participations, source: :bookings
-  has_many :participations
-  has_many :reviews
+  has_many :participations, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_one_attached :photo
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
