@@ -34,14 +34,15 @@
           </tr>
         </thead>
         <tbody>
-          <% @booking.participations.each do |participation| %>
+          <% @booking.participations.each_with_index do |participation, index| %>
+            <% status = index == 0 ? "No reply 🤷‍♀️" : ["Coming! 💃", "No reply 🤷‍♀️", "Tentative 🧐"].sample(1).sole %>
             <tr>
               <td>
                 <div class="container-photo-round-booking">
                   <%= cl_image_tag participation.user.photo.key %>
                 </div>
               </td>
-              <td style="font-size:20px;"><%= ["Coming! 💃", "No reply 🤷‍♀️", "Tentative 🧐"].sample(1).sole %></td>
+              <td style="font-size:20px;"><%= status %></td>
               <td><button><%= "Send a message" %></button></td>
               <% end %>
             </tr>
