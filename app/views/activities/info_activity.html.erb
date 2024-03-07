@@ -8,13 +8,13 @@
       <%= f.input :time%>
       <%# <%= f.input :time,
         as: :string,
-        input_html: { data: { controller: "datepicker",
-          datepicker_enable_time: "true",
-          datepicker_no_calendar: "true",
-          datepicker_date_format: "H:i",
-          datepicker_time_24hr: "true"
+        input_html: { data: { controller: "flatpickr",
+          enable_time: "true",
+          no_calendar: "true",
+          date_format: "H:i",
+          time_24hr: "true"
           }
-        } %>
+        }%>
       <%= f.input :maximum_price %>
       <%= f.hidden_field :city, value: params[:query] %>
       <%= f.hidden_field :category, value: params[:category] %>
