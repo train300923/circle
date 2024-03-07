@@ -36,6 +36,7 @@
   border-style: double;
   border-color: $pink;
   border-width: 10px;
+  position: relative;
 
   img {
     object-fit: cover;
@@ -58,9 +59,19 @@
   animation-fill-mode: forwards;
 }
 .image-holder:hover {
-  animation-play-state: paused;
+  // animation-play-state: paused;
 }
-
+.image-holder1 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
 .image-holder img {
   position: absolute;
   width: 50px;
