@@ -1,17 +1,22 @@
 <h1><strong>We are letting your pals know!</strong></h1>
 
-<div class="grid">
-  <% @participants.each do |participant| %>
-  <div class="container card-photo">
-    <div class="container-photo-round">
-      <%= image_tag participant.photo, class: "participant-photo" %>
+
+
+</div>
+   <div class="d-flex justify-content-center my-5 py-0">
+    <div class="parent">
+      <div class="circle" id="sample-text">
+        <%= image_tag "hourglass.png", id: "rounded-picture" %>
+      </div>
+      <div class="image-holder">
+        <% @participants.each do |participant| %>
+        <%= image_tag participant.photo, class: "participant-photo" %>
+        <% end %>
+      </div>
     </div>
+   </div>
   </div>
-  <% end %>
-</div>
-<div class="row d-flex justify-content-center">
-<%= image_tag "hourglass.png", id: "rounded-picture" %>
-</div>
+
 <div id="h3-participants"><h3><strong>You'll soon be able to enjoy your activity with your safe new friends!</strong></h3></div>
 
 <div class="container-sm">
