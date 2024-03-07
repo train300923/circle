@@ -1,17 +1,13 @@
-<div class="container">
+<div class="container-sm">
   <div class="row">
     <div class="col-4">
       <%= link_to "◀︎ Back to bookings", bookings_path %>
     </div>
-      <table class="table table-sm table-striped " >
+      <table class="table table-sm table-striped" >
         <thead class="thead-dark">
           <tr>
             <th>Booking</th>
             <th>Address</th>
-            <th>Description</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Price</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -20,17 +16,36 @@
           <tr>
             <td><%= @booking.activity.name %></td>
             <td><%= @booking.activity.address %></td>
-            <td><%= @booking.activity.description %></td>
-            <td><%= @booking.start_date %></td>
-            <td><%= @booking.start_date %></td>
-            <td><%= @booking.activity.price %></td>
             <td><%= @booking.status.present? ? @booking.status : "pending" %></td>
-            <td>
+            <td style="text-align:center">
               <button type="submit" name="action" value="edit"><%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %></button>
               <button type="submit" name="action" value="delete"><%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-color btn" %></button>
             </td>
           </tr>
         </tbody>
-</table>
+      </table>
+
+      <table class="table table-sm table-striped" >
+        <thead class="thead-dark">
+          <tr>
+            <th>Participant</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @booking.participations.each do |participation| %>
+            <tr>
+              <td>
+                <div class="container-photo-round-booking">
+                  <%= cl_image_tag participation.user.photo.key %>
+                </div>
+              </td>
+              <td style="font-size:20px;"><%= ["Coming! 💃", "No reply 🤷‍♀️", "Tentative 🧐"].sample(1).sole %></td>
+              <td><button><%= "Send a message" %></button></td>
+              <% end %>
+            </tr>
+        </tbody>
+      </table>
   </div>
 </div>
