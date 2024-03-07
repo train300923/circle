@@ -31,8 +31,14 @@
     </div>
   <% if review.photos.attached? %>
     <% review.photos.each do |photo| %>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active homepagecard">
       <div class="container_photo_review">
         <%= cl_image_tag photo.key %>
+      </div>
+      </div>
+      </div>
       </div>
     <% end %>
   <% else %>
