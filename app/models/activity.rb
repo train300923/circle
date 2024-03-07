@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  CATEGORIES = %w(Tennis Crossfit Opera)
+  CATEGORIES = %w(Tennis Crossfit Opera Restaurant Brunch Waltz Museum River Shopping Sightseeing Conference Aquarium Zoo Cycling Drinks Clubbing Yoga Wellness Nails Hair)
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :price, presence: true
