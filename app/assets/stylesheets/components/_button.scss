@@ -90,3 +90,23 @@
   margin-top: 0px;
   margin-bottom: 20px;
 }
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCBAD3;
+  color: $black;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  size: 30px;
+  margin: 0 auto; /* Automatically calculate left and right margins */
+}
+.back-button a{
+  color: black;
+  background-color: #FCBAD3;
+}
