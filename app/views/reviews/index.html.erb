@@ -1,56 +1,58 @@
 <div class="container">
-      <div class="back-button mt-2"><%= link_to "Back", :back %></div>
+  <div class="back-button mt-2"><%= link_to "Back", :back %></div>
   <% @reviews.each do |review| %>
-    <div class="col-12 mt-2 ml-5">
-      <div class="d-flex justify-content-start">
-        <div class="container-photo-round">
-          <%= image_tag review.user.photo %>
+    <div class="container-review">
+      <div class="col-12 mt-2">
+        <div class="d-flex justify-content-start">
+          <div class="container-photo-round">
+            <%= image_tag review.user.photo %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-12  text-align-left">
-      <div class="d-flex justify-content-start">
-        <p class="circle-comment"><%= "Posted by #{review.user.first_name} on January 14:" %></p>
+      <div class="col-12  text-align-left">
+        <div class="d-flex justify-content-start">
+          <p class="circle-comment"><%= "Posted by #{review.user.first_name} on January 14:" %></p>
+        </div>
       </div>
-    </div>
-    <div class="col-12">
-      <div class="row content-rating">
-        <p class="rating">
-          <% if review.rating.present? %>
-            <% review.rating.times do %>
-              ⭐️
+      <div class="col-12">
+        <div class="row content-rating">
+          <p class="rating">
+            <% if review.rating.present? %>
+              <% review.rating.times do %>
+                ⭐️
+              <% end %>
+            <% else %>
+              <%= "No rating" %>
             <% end %>
-          <% else %>
-            <%= "No rating" %>
-          <% end %>
-        </p>
-      </div>
-      </div>
-      <div class="row content-rating">
-        <p class="content"><%= review.content %></p>
-      </div>
-    <% if review.photos.attached? %>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <% review.photos.each do |photo| %>
-            <div class="carousel-item active homepagecard">
-              <div class="container_photo_review">
-                <%= cl_image_tag photo.key %>
-              </div>
-            </div>
-          <% end %>
+          </p>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    <% else %>
-    <%= "No photos to show" %>
-    <% end %>
+        </div>
+        <div class="row content-rating">
+          <p class="content"><%= review.content %></p>
+        </div>
+      <% if review.photos.attached? %>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% review.photos.each do |photo| %>
+              <div class="carousel-item active homepagecard">
+                <div class="container_photo_review">
+                  <%= cl_image_tag photo.key %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      <% else %>
+      <%= "No photos to show" %>
+      <% end %>
+    </div>
   <% end %>
 </div>
