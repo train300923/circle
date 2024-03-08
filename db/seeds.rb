@@ -159,6 +159,12 @@ review1.photos.attach(io: review1_photo1, filename: "review1photo1.png", content
 review1_photo2 = URI.open("https://i0.wp.com/www.whiskiedwanderlust.com/wp-content/uploads/2015/03/Vienna-Opera_Foyer.jpg?resize=600%2C450&ssl=1")
 review1.photos.attach(io: review1_photo2, filename: "review1photo2.png", content_type: "image/png")
 
+review2 = Review.create!(rating: 4, content: "Probably my favorite in Vienna :) Just make sure you book enough in advance if you want to get good seats at a reasonable price.", user: claire, activity: opera4)
+review2_photo1 = URI.open("https://meetmeattheopera.com/wp-content/uploads/2015/05/Vienna-Opera-House.jpg")
+review2.photos.attach(io: review2_photo1, filename: "review2photo1.png", content_type: "image/png")
+review2_photo2 = URI.open("https://www.viennaconcerts.com/si/stateopera/vienna-state-opera8.jpg")
+review2.photos.attach(io: review2_photo2, filename: "review2photo2.png", content_type: "image/png")
+
 booking1 = Booking.create!(start_date: "2024-03-07", end_date: "2024-03-07", status: "pending", user: sarah, activity: opera1)
 
 participation1 = Participation.create!(booking: booking1, user: johanna)

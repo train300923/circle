@@ -4,7 +4,7 @@
     <div class="container-review">
       <div class="col-12 mt-2">
         <div class="d-flex justify-content-start">
-          <div class="container-photo-round">
+          <div class="container-photo-round avatar-review">
             <%= image_tag review.user.photo %>
           </div>
         </div>
@@ -32,9 +32,9 @@
         </div>
       <% if review.photos.attached? %>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
+          <div class="carousel-inner carousel-review">
             <% review.photos.each do |photo| %>
-              <div class="carousel-item active homepagecard">
+              <div class="carousel-item active homepagecard card-review">
                 <div class="container_photo_review">
                   <%= cl_image_tag photo.key %>
                 </div>
