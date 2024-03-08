@@ -23,7 +23,7 @@
         <%= cl_image_tag @random_activity.photo.key %>
       <% end %>
       </div>
-      <div class="image-holder">
+      <div class="image-holder" data-controller="home">
         <%= cl_image_tag @users_memory[0].photo.key %>
         <%= cl_image_tag @users_memory[1].photo.key %>
         <%= cl_image_tag @users_memory[2].photo.key %>
@@ -35,9 +35,10 @@
       </div>
     </div>
    </div>
+   <p>Two weeks already! <%= link_to "Remember..." %></p>
   </div>
   <div class="row">
-  <div class="col-12 py-0 mt-3 mb-3">
+  <div class="col-12 py-0 mt-0 mb-3">
     <h2><strong>Getting inspired</h2>
   </div>
 
