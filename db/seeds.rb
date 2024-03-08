@@ -159,7 +159,14 @@ review1.photos.attach(io: review1_photo1, filename: "review1photo1.png", content
 review1_photo2 = URI.open("https://i0.wp.com/www.whiskiedwanderlust.com/wp-content/uploads/2015/03/Vienna-Opera_Foyer.jpg?resize=600%2C450&ssl=1")
 review1.photos.attach(io: review1_photo2, filename: "review1photo2.png", content_type: "image/png")
 
+review2 = Review.create!(rating: 4, content: "Probably my favorite in Vienna :) Just make sure you book enough in advance if you want to get good seats at a reasonable price.", user: claire, activity: opera4)
+review2_photo1 = URI.open("https://meetmeattheopera.com/wp-content/uploads/2015/05/Vienna-Opera-House.jpg")
+review2.photos.attach(io: review2_photo1, filename: "review2photo1.png", content_type: "image/png")
+review2_photo2 = URI.open("https://www.viennaconcerts.com/si/stateopera/vienna-state-opera8.jpg")
+review2.photos.attach(io: review2_photo2, filename: "review2photo2.png", content_type: "image/png")
+
 booking1 = Booking.create!(start_date: "2024-03-07", end_date: "2024-03-07", status: "pending", user: sarah, activity: opera1)
+booking2 = Booking.create!(start_date: "2024-03-01", end_date: "2024-03-02", status: "closed", user: sarah, activity: clubbing1)
 
 participation1 = Participation.create!(booking: booking1, user: johanna)
 participation2 = Participation.create!(booking: booking1, user: claire)
@@ -167,10 +174,71 @@ participation3 = Participation.create!(booking: booking1, user: petra)
 participation4 = Participation.create!(booking: booking1, user: svetlana)
 participation5 = Participation.create!(booking: booking1, user: jennifer)
 
+memory1 = Memory.create!(title: "Crazy night in Vienna!!", user: sarah, booking: booking2)
+memory1_photo1 = URI.open("https://images.pexels.com/photos/787961/pexels-photo-787961.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo1, filename: "memory1photo1.png", content_type: "image/png")
+
+memory1_photo2 = URI.open("https://images.pexels.com/photos/3171817/pexels-photo-3171817.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo2, filename: "memory1photo2.png", content_type: "image/png")
+
+memory1_photo3 = URI.open("https://images.pexels.com/photos/2240763/pexels-photo-2240763.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo3, filename: "memory1photo3.png", content_type: "image/png")
+
+memory1_photo4 = URI.open("https://images.pexels.com/photos/3419645/pexels-photo-3419645.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo4, filename: "memory1photo4.png", content_type: "image/png")
+
+memory1_photo5 = URI.open("https://images.pexels.com/photos/15761526/pexels-photo-15761526/free-photo-of-photo-of-two-laughing-young-women-standing-on-a-pedestal-at-a-party.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo5, filename: "memory1photo5.png", content_type: "image/png")
+
+memory1_photo6 = URI.open("https://images.pexels.com/photos/6224745/pexels-photo-6224745.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo6, filename: "memory1photo6.png", content_type: "image/png")
+
+memory1_photo7 = URI.open("https://images.pexels.com/photos/2291450/pexels-photo-2291450.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo7, filename: "memory1photo7.png", content_type: "image/png")
+
+memory1_photo8 = URI.open("https://images.pexels.com/photos/3394248/pexels-photo-3394248.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo8, filename: "memory1photo8.png", content_type: "image/png")
+
+memory1_photo9 = URI.open("https://images.pexels.com/photos/3682820/pexels-photo-3682820.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo9, filename: "memory1photo9.png", content_type: "image/png")
+
+memory1_photo10 = URI.open("https://images.pexels.com/photos/6224749/pexels-photo-6224749.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo10, filename: "memory1photo10.png", content_type: "image/png")
+
+memory1_photo11 = URI.open("https://images.pexels.com/photos/5055814/pexels-photo-5055814.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo11, filename: "memory1photo11.png", content_type: "image/png")
+
+memory1_photo12 = URI.open("https://images.pexels.com/photos/110472/pexels-photo-110472.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo12, filename: "memory1photo12.png", content_type: "image/png")
+
+memory1_photo13 = URI.open("https://images.pexels.com/photos/948199/pexels-photo-948199.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo13, filename: "memory1photo13.png", content_type: "image/png")
+
+memory1_photo14 = URI.open("https://images.pexels.com/photos/236243/pexels-photo-236243.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo14, filename: "memory1photo14.png", content_type: "image/png")
+
+memory1_photo15 = URI.open("https://images.pexels.com/photos/373067/pexels-photo-373067.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo15, filename: "memory1photo15.png", content_type: "image/png")
+
+memory1_photo16 = URI.open("https://images.pexels.com/photos/19551009/pexels-photo-19551009/free-photo-of-laughing-woman-at-a-party.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo16, filename: "memory1photo16.png", content_type: "image/png")
+
+memory1_photo17 = URI.open("https://images.pexels.com/photos/11802020/pexels-photo-11802020.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo17, filename: "memory1photo17.png", content_type: "image/png")
+
+memory1_photo18 = URI.open("https://images.pexels.com/photos/7271400/pexels-photo-7271400.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo18, filename: "memory1photo18.png", content_type: "image/png")
+
+memory1_photo19 = URI.open("https://images.pexels.com/photos/2381596/pexels-photo-2381596.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo19, filename: "memory1photo19.png", content_type: "image/png")
+
+memory1_photo20 = URI.open("https://images.pexels.com/photos/1706018/pexels-photo-1706018.jpeg?auto=compress&cs=tinysrgb&w=800")
+memory1.photos.attach(io: memory1_photo20, filename: "memory1photo20.png", content_type: "image/png")
+
 [tennis1, tennis2, tennis3, tennis4,
   crossfit1, crossfit2, crossfit3, crossfit4,
   opera1, opera2, opera3, opera4,
-  review1, booking1,
+  review1, booking1, booking2,
   participation1, participation2, participation3, participation4, participation5,
   restaurant1,
   brunch1,
@@ -188,4 +256,5 @@ participation5 = Participation.create!(booking: booking1, user: jennifer)
   yoga1,
   wellness1,
   nails1,
-  hair_dresser1].each(&:save)
+  hair_dresser1,
+  memory1].each(&:save)

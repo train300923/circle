@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_02_092521) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_08_215338) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,13 +57,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_02_092521) do
   create_table "bookings", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.string "status"
+    t.string "status", default: "new", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "activity_id", null: false
     t.index ["activity_id"], name: "index_bookings_on_activity_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "memories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.index ["booking_id"], name: "index_memories_on_booking_id"
+    t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -112,6 +122,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_02_092521) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
+  add_foreign_key "memories", "bookings"
+  add_foreign_key "memories", "users"
   add_foreign_key "participations", "bookings"
   add_foreign_key "participations", "users"
   add_foreign_key "reviews", "activities"

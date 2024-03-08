@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     member do
       get :participants_selected
     end
+    resources :memories
   end
 
   resources :activities do

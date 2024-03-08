@@ -3,7 +3,7 @@
     <div class="col-4">
       <%= link_to "◀︎ Back to bookings", bookings_path %>
     </div>
-      <table class="table table-sm table-striped" >
+      <table class="table table-sm table-striped table-booking" >
         <thead class="thead-dark">
           <tr>
             <th>Booking</th>
@@ -18,14 +18,14 @@
             <td><%= @booking.activity.address %></td>
             <td><%= @booking.status.present? ? @booking.status : "pending" %></td>
             <td style="text-align:center">
-              <button type="submit" name="action" value="edit"><%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %></button>
-              <button type="submit" name="action" value="delete"><%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-color btn" %></button>
+              <button type="submit" name="action" value="edit" class="edit"><%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %></button>
+              <button type="submit" name="action" value="delete" class="delete"><%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-color btn" %></button>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <table class="table table-sm table-striped" >
+      <table class="table table-sm table-striped table-booking" >
         <thead class="thead-dark">
           <tr>
             <th>Participant</th>
@@ -34,15 +34,16 @@
           </tr>
         </thead>
         <tbody>
-          <% @booking.participations.each do |participation| %>
+          <% @booking.participations.each_with_index do |participation, index| %>
+            <% status = index == 0 ? "No reply 🤷‍♀️" : ["Coming! 💃", "No reply 🤷‍♀️", "Tentative 🧐"].sample(1).sole %>
             <tr>
-              <td>
-                <div class="container-photo-round-booking">
+              <td style="text-align:center">
+                <div class="container-photo-round-booking" style="display: inline-block">
                   <%= cl_image_tag participation.user.photo.key %>
                 </div>
               </td>
-              <td style="font-size:20px;"><%= ["Coming! 💃", "No reply 🤷‍♀️", "Tentative 🧐"].sample(1).sole %></td>
-              <td><button><%= "Send a message" %></button></td>
+              <td style="font-size:20px;color:purple;vertical-align:middle"><%= status %></td>
+              <td style="vertical-align:middle"><button class="send-a-message"><%= "Send a message" %></button></td>
               <% end %>
             </tr>
         </tbody>

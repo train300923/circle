@@ -10,20 +10,28 @@
   text-align: left;
 }
 .rating{
-  font-size: 40px;
+  font-size: 30px;
   padding: 0px;
-  margin: 5px;
 }
 .content{
   color: purple;
   background-color: white;
   margin-left: 0px;
-  margin-right: 12px;
-  padding-right: 12px;
-  padding: 15px 15px 15px 15px;
   box-shadow: 2px 2px 2px 2px;
 }
 .circle-comment{
   color: grey;
   margin-bottom: 0px;
+  margin-left: 5px;
+}
+.empty-star{
+  font-size: 25px;
+}
+#padding-title1{
+padding: 20px;
+}
+.comment-memories{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 30px;
 }
