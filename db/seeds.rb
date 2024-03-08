@@ -166,6 +166,7 @@ review2_photo2 = URI.open("https://www.viennaconcerts.com/si/stateopera/vienna-s
 review2.photos.attach(io: review2_photo2, filename: "review2photo2.png", content_type: "image/png")
 
 booking1 = Booking.create!(start_date: "2024-03-07", end_date: "2024-03-07", status: "pending", user: sarah, activity: opera1)
+booking2 = Booking.create!(start_date: "2024-03-01", end_date: "2024-03-02", status: "closed", user: sarah, activity: clubbing1)
 
 participation1 = Participation.create!(booking: booking1, user: johanna)
 participation2 = Participation.create!(booking: booking1, user: claire)
@@ -173,10 +174,12 @@ participation3 = Participation.create!(booking: booking1, user: petra)
 participation4 = Participation.create!(booking: booking1, user: svetlana)
 participation5 = Participation.create!(booking: booking1, user: jennifer)
 
+memory1 = Memory.create!(title: "Crazy night in Vienna!!", user: sarah, booking: booking2)
+
 [tennis1, tennis2, tennis3, tennis4,
   crossfit1, crossfit2, crossfit3, crossfit4,
   opera1, opera2, opera3, opera4,
-  review1, booking1,
+  review1, booking1, booking2,
   participation1, participation2, participation3, participation4, participation5,
   restaurant1,
   brunch1,
@@ -194,4 +197,5 @@ participation5 = Participation.create!(booking: booking1, user: jennifer)
   yoga1,
   wellness1,
   nails1,
-  hair_dresser1].each(&:save)
+  hair_dresser1,
+  memory1].each(&:save)
