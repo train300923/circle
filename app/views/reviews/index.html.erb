@@ -21,6 +21,10 @@
               <% review.rating.times do %>
                 ⭐️
               <% end %>
+              <% empty_stars = 5 - review.rating %>
+              <% empty_stars.times do %>
+                <span class="empty-star">✰</span>
+              <% end %>
             <% else %>
               <%= "No rating" %>
             <% end %>
@@ -31,27 +35,27 @@
           <p class="content"><%= review.content %></p>
         </div>
       <% if review.photos.attached? %>
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner carousel-review">
-            <% review.photos.each do |photo| %>
-              <div class="carousel-item active homepagecard card-review">
-                <div class="container_photo_review">
-                  <%= cl_image_tag photo.key %>
+          <div id="carouselExampleControls<%= review.id %>" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner carousel-review">
+        <% review.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item <%= index == 0 ? 'active' : '' %> homepagecard card-review">
+                  <div class="container_photo_review">
+                    <%= cl_image_tag photo.key %>
+                  </div>
                 </div>
-              </div>
-            <% end %>
+        <% end %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls<%= review.id %>" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls<%= review.id %>" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
       <% else %>
-      <%= "No photos to show" %>
+        <%= "No photos to show" %>
       <% end %>
     </div>
   <% end %>

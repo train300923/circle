@@ -64,6 +64,11 @@ img {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgb(233, 198, 227);
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .carousel-control-next-icon{
   margin-top: -100px;
