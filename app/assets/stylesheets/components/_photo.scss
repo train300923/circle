@@ -27,3 +27,15 @@
 .rotate-image {
   animation: rotate360 30s linear infinite;
 }
+
+.image-holder {
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.image-holder:hover {
+  animation-play-state: paused;
+}
