@@ -81,17 +81,32 @@ img {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
+  position: relative;
 }
+
 .photo-container-memory{
   display: flex;
   justify-content: center;
   padding: 5px;
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+  img {
+    width: 83.5px;
+    height: 125.25px;
+    object-fit: cover;
+  }
+
+  img.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
 }
-}
+
 .carousel-control-next-icon{
   margin-top: -100px;
 }
@@ -110,14 +125,4 @@ img {
   margin-bottom: 20px;
   margin-right: 10px;
   margin-left: 10px;
-}
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
 }

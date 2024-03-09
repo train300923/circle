@@ -81,7 +81,7 @@ opera2.photo.attach(io: opera2_photo, filename: "opera2.png", content_type: "ima
 opera3 = Activity.create!(name: 'Theater an der Wien', category: CATEGORY[2], description: 'The famous and unforgettable Theater an der Wien! The most prestigious plays and concerts came here for a show', price: 130, address: "Linke Wienzeile 6, 1060 Wien, Austria", latitude: '48.19930', longitude: '16.36371')
 opera3_photo = URI.open("https://www.musicalvienna.at/media/image/16941_120801-18.jpg")
 opera3.photo.attach(io: opera3_photo, filename: "opera3.png", content_type: "image/png")
-opera4 = Activity.create!(name: 'Vienna State Opera', category: CATEGORY[2], description: 'You can feel all the austrian rigor in this monumental place. Truly stunning!', price: 150, address: "Opernring 2, 1010 Wien, Austria", latitude: '48.20330', longitude: '16.36899')
+opera4 = Activity.create!(name: 'Vienna State Opera', category: CATEGORY[2], description: 'Impressive, elegant, timeless: Vienna in one building. Truly stunning!', price: 150, address: "Opernring 2, 1010 Wien, Austria", latitude: '48.20330', longitude: '16.36899')
 opera4_photo = URI.open("https://m-festival.biz/en/wp-content/uploads/2023/04/323927622_5694523843997527_6046703828531623519_n.jpeg")
 opera4.photo.attach(io: opera4_photo, filename: "opera4.png", content_type: "image/png")
 

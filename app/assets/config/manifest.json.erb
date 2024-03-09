@@ -1,0 +1,37 @@
+{
+  "background_color": "white",
+  "description": "Circle is a unique 'women only' network for like-minded busy women.",
+  "display": "fullscreen",
+  "name": "Le Wagon",
+  "start_url": "/",
+  "icons": [
+    <% test = [
+ "apple-icon-144x144.png",
+ "apple-icon-114x114.png",
+ "ms-icon-310x310.png",
+ "ms-icon-144x144.png",
+ "apple-icon-57x57.png",
+ "apple-icon-152x152.png",
+ "ms-icon-150x150.png",
+ "android-icon-72x72.png",
+ "android-icon-96x96.png",
+ "android-icon-36x36.png",
+ "apple-icon-180x180.png",
+ "android-icon-48x48.png",
+ "apple-icon-76x76.png",
+ "apple-icon-60x60.png",
+ "android-icon-144x144.png",
+ "apple-icon-72x72.png",
+ "apple-icon-120x120.png",
+ "ms-icon-70x70.png"] %>
+    <% files = test.select {|f| !File.directory? f} %>
+    <% files.each_with_index do |file, index| %>
+      <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
+      {
+        "src": "<%= image_path "icons/#{file}" %>",
+        "sizes": "<%= match && match[:size] %>",
+        "type": "image/png"
+      }<%= "," unless (files.size - 1) == index %>
+    <% end %>
+  ]
+}
