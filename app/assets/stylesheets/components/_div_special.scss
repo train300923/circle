@@ -54,3 +54,22 @@
     padding: 2px;
     width: 350px;
   }
+  .container-sm.background2 {
+    position: absolute;
+    // background-image: url("https://images.pexels.com/photos/5935227/pexels-photo-5935227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("home_page_image.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  .container-sm.background2::before {
+    content: "";
+    position: absolute;
+    background: rgba(226, 225, 225, 0.795);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+  }

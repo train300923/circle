@@ -1,28 +1,36 @@
-<h1><strong>We are letting your pals know!</strong></h1>
-
-
-
-</div>
-   <div class="d-flex justify-content-center my-5 py-0">
+<div class="container-sm background2">
+  <div class="d-flex justify-content-center my-5 py-0">
     <div class="parent">
-      <div class="circle" id="sample-text">
-        <%= image_tag "hourglass.png", id: "rounded-picture" %>
-      </div>
-      <div class="image-holder1" >
-        <%# <% @participants.each do |participant| %>
-        <% @participants.each_with_index do |participant, index| %>
-        <% angle = 2 * Math::PI * index / @participants.size %>
-        <%= image_tag participant.photo, class: "participant-photo2", style: "--angle: #{angle}rad;" %>
-        <% end %>
-      </div>
+      <h1 class="grey-background-title"><strong>We are letting your pals know!</strong></h1>
     </div>
-   </div>
   </div>
 
-<div id="h3-participants"><h3><strong>You'll soon be able to enjoy your activity with your safe new friends!</strong></h3></div>
 
-<div class="container-sm">
-  <div class="row" id="btn-link">
-    <%# <%= link_to "Event details", potential_part_selected_activity_path, class: "btn small-btn" %>
+    <div class="d-flex justify-content-center my-5 py-0">
+      <div class="parent">
+        <div class="circle" id="sample-text">
+          <%= image_tag "hourglass.png", id: "rounded-picture", class: "rotate-image" %>
+        </div>
+        <div class="image-holder1" >
+          <%# <% @participants.each do |participant| %>
+          <% @participants.each_with_index do |participant, index| %>
+          <% angle = 2 * Math::PI * index / @participants.size %>
+          <%= image_tag participant.photo, class: "participant-photo2", style: "--angle: #{angle}rad;" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="d-flex justify-content-center my-5 py-0">
+    <div class="parent">
+      <div id="h3-participants"><h3 class="grey-background-title"><strong>You'll soon be able to enjoy your activity with your safe new friends!</strong></h3></div>
+    </div>
+  </div>
+
+  <div class="container-sm">
+    <div class="row" id="btn-link">
+      <%# <%= link_to "Event details", potential_part_selected_activity_path, class: "btn small-btn" %>
+    </div>
   </div>
 </div>
