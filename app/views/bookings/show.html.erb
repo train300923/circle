@@ -1,9 +1,15 @@
 <div class="container-sm background2">
-  <div class="d-flex justify-content-center my-5 py-0">
+  <div class="d-flex justify-content-center my-2 py-0">
     <div class="parent">
-      <div class="col-8">
-        <%= link_to "◀︎ Back to bookings", bookings_path %>
+
+      <div class="container p-0">
+        <div class="col-12">
+          <div class="d-flex justify-content-start">
+            <div class="back-button mt-2 mb-4" id="back-button-bookings"><%= link_to "Back to bookings", bookings_path %></div>
+          </div>
+        </div>
       </div>
+
         <div class="container-sm">
           <div class="row">
             <table class="table table-sm table-striped table-booking" >

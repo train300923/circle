@@ -104,7 +104,7 @@
   margin-bottom: 0px;
   margin-top: 0px;
   size: 30px;
-  margin: 0 auto; /* Automatically calculate left and right margins */
+  // margin: 0 auto; /* Automatically calculate left and right margins */
 }
 .back-button a{
   color: black;
@@ -135,4 +135,7 @@
   border-radius: 10px 10px 10px 10px;
   height: 40px;
   box-shadow: 1px 1px 1px 1px;
+}
+#back-button-bookings{
+  width: 150px;
 }
