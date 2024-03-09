@@ -1,14 +1,15 @@
 <h1 id="padding-title1">Here is what you can do in...<br>
 <%= "#{@city.capitalize}" %></h1>
+
 <div class="grid">
 <% @categories_dry.each do |category_dry| %>
     <div class="container card-photo">
-    <div class="row container-photo-round">
-      <%= cl_image_tag @activities.where(category: category_dry).first.photo.key if @activities.where(category: category_dry).first.photo.attached? %>
-    </div>
-    <div class="row card-text-photo">
-      <%= link_to category_dry, activities_info_activity_path(query: @city, category: category_dry) %>
-    </div>
+      <div class="row container-photo-round2">
+        <%= cl_image_tag @activities.where(category: category_dry).first.photo.key if @activities.where(category: category_dry).first.photo.attached? %>
       </div>
+      <div class="row card-text-photo">
+        <%= link_to category_dry, activities_info_activity_path(query: @city, category: category_dry) %>
+      </div>
+    </div>
 <% end %>
 </div>
