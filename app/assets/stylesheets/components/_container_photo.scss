@@ -104,3 +104,20 @@ img {
 .avatar-review{
   margin-left: 5px;
 }
+.home-sub-container{
+  background-color: rgb(233, 198, 227);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
