@@ -1,9 +1,15 @@
-<div class="container" id="form-format">
-  <div class="row justify-content-center">
-      <%= simple_form_for @booking do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, "Submit", class: "submit-button" %>
-      <% end %>
+<div class="container-sm background2">
+  <div class="d-flex justify-content-center my-5 py-0">
+    <div class="parent">
+      <div class="container" id="form-format">
+        <div class="row justify-content-center">
+          <%= simple_form_for @booking do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.button :submit, "Submit", class: "submit-button" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
