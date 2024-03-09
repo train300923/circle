@@ -1,8 +1,8 @@
 <h3 class="comment-memories">Girls night out in Vienna, 1st of March. So much fun!!! 💃 🪩 🥳 🍾</h3>
-<div class="grid-memories">
+<div data-controller="memories" class="grid-memories" >
 <% if @memory.photos.attached? %>
 <% @memory.photos.each do |photo| %>
-<div class="photo-container-memory">
+<div data-memories-target="popableElement" class="photo-container-memory">
 <%= cl_image_tag photo.key %>
 </div>
 <% end %>
