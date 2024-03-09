@@ -41,6 +41,11 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+
+}
+
+.image-holder img {
+  animation-direction: normal;
 }
 
 .image-holder:hover {

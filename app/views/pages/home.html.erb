@@ -24,7 +24,7 @@
       <% end %>
       </div>
       <div class="image-holder" data-controller="home">
-        <%= cl_image_tag @users_memory[0].photo.key %>
+        <%= cl_image_tag @users_memory[0].photo.key, :class => 'photo-circle' %>
         <%= cl_image_tag @users_memory[1].photo.key %>
         <%= cl_image_tag @users_memory[2].photo.key %>
         <%= cl_image_tag @users_memory[3].photo.key %>
