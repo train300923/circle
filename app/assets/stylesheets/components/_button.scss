@@ -109,16 +109,26 @@
 .back-button a{
   color: black;
   background-color: #FCBAD3;
+  font-weight: normal;
 }
 .edit{
   width: 90px;
-  margin: 5px;
-  background-color: rgb(140, 96, 195);
+  margin: 3px;
+  background-color: #9ef7c6;
+  border-radius: 15px;
 }
 .delete{
   width: 90px;
   margin: 5px;
-  background-color: rgb(179, 44, 93);
+  padding: 8px;
+  background-color: rgb(177, 88, 121);
+  border-radius: 15px;
+  color: $white;
+}
+.delete a{
+  background-color: rgb(177, 88, 121);
+  color: white;
+  font-weight: normal;
 }
 .send-a-message{
   background-color: #FCBAD3;
