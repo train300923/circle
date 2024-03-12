@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get "pages/home", to: "pages#home"
 
+
   resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
     resources :participants
     member do
@@ -42,4 +43,6 @@ Rails.application.routes.draw do
   #     get :potential_part_selected
   #   end
   # end
+  get '/404', to: 'errors#not_found'
+  get '/500', to: 'errors#internal_server_error'
 end

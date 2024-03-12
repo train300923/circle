@@ -1,4 +1,4 @@
-<h1>Now, up to you!</h1>
+<h1 id="padding-title1">Now, pick your favorite spot!</h1>
 <div class="container">
   <% if !@activities.nil? %>
     <% @activities.each do |activity|%>
@@ -6,7 +6,8 @@
           <%= cl_image_tag activity.photo.key if activity.photo.attached? %>
         </div>
         <div id="activity-photo">
-        <div id="activity-title"><%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %></div>
+          <div><%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %>
+          </div>
         </div>
     <% end %>
   <% end %>

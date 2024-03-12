@@ -1,30 +1,34 @@
-<div class="container">
-  <div class="row d-flex justify-content-center">
-      <h1 class="m-5 p-0" >Your bookings</h1>
+<div class="container-sm background2">
+    <div class="parent">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <h1 class="mt-5 mb-5 ms-0 p-0" ><strong>Your bookings</strong></h1>
 
 
-        <div class="m-0 p-0 d-flex justify-content-center">
-          <table class="table table-sm table-striped" id="table-design" >
+            <div class="m-0 p-0 d-flex justify-content-center">
+              <table class="table table-sm table-striped" id="table-design" >
 
-            <thead class="thead-dark">
-              <tr>
-                <th>Booking</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-              </tr>
-            </thead>
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Booking</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                  </tr>
+                </thead>
 
-            <tbody>
-              <% @bookings.each_with_index do |booking, index| %>
-                <tr>
-                  <td><%= link_to "Booking n°#{index + 1}", booking_path(booking), class: "link-color" %></td>
-                  <td><%= "#{booking.start_date}" %></td>
-                  <td><%= "#{booking.end_date}" %></td>
-                </tr>
-              <% end %>
-            </tbody>
+                <tbody>
+                  <% @bookings.each_with_index do |booking, index| %>
+                    <tr>
+                      <td><%= link_to "Booking n°#{index + 1}", booking_path(booking), class: "link-color" %></td>
+                      <td><%= "#{booking.start_date}" %></td>
+                      <td><%= "#{booking.end_date}" %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
 
-          </table>
+              </table>
+            </div>
         </div>
+      </div>
+    </div>
   </div>
-</div>

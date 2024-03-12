@@ -1,52 +1,64 @@
-<div class="container-sm">
-  <div class="row">
-    <div class="col-4">
-      <%= link_to "◀︎ Back to bookings", bookings_path %>
-    </div>
-      <table class="table table-sm table-striped table-booking" >
-        <thead class="thead-dark">
-          <tr>
-            <th>Booking</th>
-            <th>Address</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= @booking.activity.name %></td>
-            <td><%= @booking.activity.address %></td>
-            <td><%= @booking.status.present? ? @booking.status : "pending" %></td>
-            <td style="text-align:center">
-              <button type="submit" name="action" value="edit" class="edit"><%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %></button>
-              <button type="submit" name="action" value="delete" class="delete"><%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-color btn" %></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<div class="container-sm background2">
+  <div class="d-flex justify-content-center my-2 py-0">
+    <div class="parent">
 
-      <table class="table table-sm table-striped table-booking" >
-        <thead class="thead-dark">
-          <tr>
-            <th>Participant</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @booking.participations.each_with_index do |participation, index| %>
-            <% status = index == 0 ? "No reply 🤷‍♀️" : ["Coming! 💃", "No reply 🤷‍♀️", "Tentative 🧐"].sample(1).sole %>
-            <tr>
-              <td style="text-align:center">
-                <div class="container-photo-round-booking" style="display: inline-block">
-                  <%= cl_image_tag participation.user.photo.key %>
-                </div>
-              </td>
-              <td style="font-size:20px;color:purple;vertical-align:middle"><%= status %></td>
-              <td style="vertical-align:middle"><button class="send-a-message"><%= "Send a message" %></button></td>
-              <% end %>
-            </tr>
-        </tbody>
-      </table>
+      <div class="container p-0">
+        <div class="col-12">
+          <div class="d-flex justify-content-start">
+            <div class="back-button mt-2 mb-4" id="back-button-bookings"><%= link_to "Back to bookings", bookings_path %></div>
+          </div>
+        </div>
+      </div>
+
+        <div class="container-sm">
+          <div class="row">
+            <table class="table table-sm table-striped table-booking" >
+              <thead class="thead-dark">
+                <tr>
+                  <th class="title-center">Booking</th>
+                  <th class="title-center">Address</th>
+                  <th class="title-center">Status</th>
+                  <th class="title-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @booking.activity.name %></td>
+                  <td><%= @booking.activity.address %></td>
+                  <td><%= @booking.status.present? ? @booking.status : "pending" %></td>
+                  <td style="text-align:center">
+                    <button type="submit" name="action" value="edit" class="edit"><%= link_to "Edit", edit_booking_path(@booking), class: "link-color btn" %></button>
+                    <button type="submit" name="action" value="delete" class="delete"><%= link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-sm table-striped table-booking" >
+              <thead class="thead-dark">
+                <tr>
+                  <th class="title-center">Participant</th>
+                  <th class="title-center">Status</th>
+                  <th class="title-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @booking.participations.each_with_index do |participation, index| %>
+                  <% status = index == 0 ? "No reply 🤷‍♀️" : ["Coming! 💃", "No reply 🤷‍♀️", "Tentative 🧐"].sample(1).sole %>
+                  <tr>
+                    <td style="text-align:center">
+                      <div class="container-photo-round-booking" style="display: inline-block">
+                        <%= cl_image_tag participation.user.photo.key %>
+                      </div>
+                    </td>
+                    <td style="font-size:20px;color:purple;vertical-align:middle"><%= status %></td>
+                    <td style="vertical-align:middle"><button class="send-a-message"><%= "Send a message" %></button></td>
+                    <% end %>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
