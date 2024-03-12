@@ -82,6 +82,7 @@ img {
   margin-right: 10px;
   margin-bottom: 10px;
   position: relative;
+  border-radius: 5px;
 }
 
 .photo-container-memory{
@@ -101,6 +102,8 @@ img {
     left: 0;
     height: 100%;
     width: 100%;
+    border-color: rgb(233, 198, 227);
+    border-width: 2px;
     object-fit: contain;
     object-position: center;
   }
@@ -125,4 +128,6 @@ img {
   margin-bottom: 20px;
   margin-right: 10px;
   margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px;
 }

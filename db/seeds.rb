@@ -13,7 +13,7 @@ Activity.destroy_all
 Booking.destroy_all
 Review.destroy_all
 
-CATEGORY = ["Tennis", "Crossfit", "Opera", "Restaurant", "Brunch", "Waltz", "Museum", "River", "Shopping", "Sightseeing", "Conference", "Aquarium", "Zoo", "Cycling", "Drinks", "Clubbing", "Yoga", "Wellness", "Nails", "Hair"]
+CATEGORY = ["Tennis", "Crossfit", "Opera", "Restaurant", "Brunch", "Waltz", "Museum", "River", "Shopping", "Sightseeing", "Conference", "Aquarium", "Zoo", "Cycling", "Drinks", "Clubbing", "Yoga", "Wellness", "Nails", "Hair", "Concert"]
 
 sarah = User.create!(first_name: 'Sarah', last_name: 'Maffre', age: 32, job: 'Full-stack developer', address: '12 rue des renardeaux 75011 paris', phone_number: '061245654348', biography: "I am just a crazy coder!", latitude: '48.86481', longitude: '2.38762', preferred_category: CATEGORY[0], email: 'sarah@circle.com', password: 'password1')
 sarah_photo = URI.open("https://images.pexels.com/photos/7275385/pexels-photo-7275385.jpeg?auto=compress&cs=tinysrgb&h=204&fit=crop&w=228&dpr=2")
@@ -89,69 +89,73 @@ restaurant1 = Activity.create!(name: 'Restaurant', category: CATEGORY[3], descri
 restaurant1_photo = URI.open("https://www.yonder.fr/sites/default/files/contenu/destinations/Meierei%20im%20Stadtpark.jpg")
 restaurant1.photo.attach(io: restaurant1_photo, filename: "restaurant1.png", content_type: "image/png")
 
-brunch1 = Activity.create!(name: 'Brunch', category: CATEGORY[4], description: 'Fluffy pancakes all around!', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20495', longitude: '16.35743')
+brunch1 = Activity.create!(name: 'Brunch', category: CATEGORY[4], description: 'Fluffy pancakes all around!', price: 30, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20495', longitude: '16.35743')
 brunch1_photo = URI.open("https://www.wien.info/resource/image/295200/Hero-Header/1890/700/7e6926138af4cafd167a4289dd3d9759/70075196063A2A9CEE7FA5584285A831/cafe-drechsler-brunch-fruehstueck.webp")
 brunch1.photo.attach(io: brunch1_photo, filename: "brunch1.png", content_type: "image/png")
 
-waltz1 = Activity.create!(name: 'Waltz', category: CATEGORY[5], description: 'Prince charming now!', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20494', longitude: '16.35746')
+waltz1 = Activity.create!(name: 'Waltz', category: CATEGORY[5], description: 'Prince charming now!', price: 20, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20494', longitude: '16.35746')
 waltz1_photo = URI.open("https://static.wixstatic.com/media/8dd9d2_361f3750152246d68d7e28350133acfd~mv2.jpg/v1/fill/w_640,h_360,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8dd9d2_361f3750152246d68d7e28350133acfd~mv2.jpg")
 waltz1.photo.attach(io: waltz1_photo, filename: "waltz1.png", content_type: "image/png")
 
-museum1 = Activity.create!(name: 'Museum', category: CATEGORY[6], description: 'Unique pieces of art, amazing building', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20492', longitude: '16.35741')
+museum1 = Activity.create!(name: 'Museum', category: CATEGORY[6], description: 'Unique pieces of art, amazing building', price: 30, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20492', longitude: '16.35741')
 museum1_photo = URI.open("https://www.wien.info/resource/image/291972/1x1/1000/1000/137d08da14a998bf592dd9613356a361/9DC24EF11D02180BC4206EB3F8489721/50836-naturhistorisches-museum-wien-nhm-dinosaurier.webp")
 museum1.photo.attach(io: museum1_photo, filename: "museum1.png", content_type: "image/png")
 
-river1 = Activity.create!(name: 'River', category: CATEGORY[7], description: 'One of the most iconic walks in Europe', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20495', longitude: '16.35748')
+river1 = Activity.create!(name: 'River', category: CATEGORY[7], description: 'One of the most iconic walks in Europe', price: 20, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20495', longitude: '16.35748')
 river1_photo = URI.open("https://www.discoverwalks.com/blog/wp-content/uploads/2020/02/danube-vienna.jpg")
 river1.photo.attach(io: river1_photo, filename: "river1.png", content_type: "image/png")
 
-shopping1 = Activity.create!(name: 'Shopping', category: CATEGORY[8], description: 'Last trends and tradition in one place', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20491', longitude: '16.35747')
+shopping1 = Activity.create!(name: 'Shopping', category: CATEGORY[8], description: 'Last trends and tradition in one place', price: 100, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20491', longitude: '16.35747')
 shopping1_photo = URI.open("https://www.vienna-unwrapped.com/wp-content/uploads/2014/03/vienna_shopping_for_luxury_09.jpg")
 shopping1.photo.attach(io: shopping1_photo, filename: "shopping1.png", content_type: "image/png")
 
-sightseeing1 = Activity.create!(name: 'Sightseeing', category: CATEGORY[9], description: 'Learn more about one of the most beautiful city in Europe', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20494', longitude: '16.35741')
+sightseeing1 = Activity.create!(name: 'Sightseeing', category: CATEGORY[9], description: 'Learn more about one of the most beautiful city in Europe', price: 10, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20494', longitude: '16.35741')
 sightseeing1_photo = URI.open("https://res.klook.com/image/upload/fl_lossy.progressive,w_800,c_fill,q_85/Mobile/City/vfg4baggrck0egh36owk.jpg")
 sightseeing1.photo.attach(io: sightseeing1_photo, filename: "sightseeing1.png", content_type: "image/png")
 
-conference1 = Activity.create!(name: 'Conference', category: CATEGORY[10], description: 'The largest conference center in Vienna', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20498', longitude: '16.35741')
+conference1 = Activity.create!(name: 'Conference', category: CATEGORY[10], description: 'The largest conference center in Vienna', price: 100, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20498', longitude: '16.35741')
 conference1_photo = URI.open("https://meeting.vienna.info/resource/blob/447576/2edae8061304e3c5226d641e28451262/acv-tr-hall-f1-f2-8757-data.jpg")
 conference1.photo.attach(io: conference1_photo, filename: "conference1.png", content_type: "image/png")
 
-aquarium1 = Activity.create!(name: 'Aquarium', category: CATEGORY[11], description: 'More than 500 species from all over the world', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20492', longitude: '16.35743')
+aquarium1 = Activity.create!(name: 'Aquarium', category: CATEGORY[11], description: 'More than 500 species from all over the world', price: 30, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20492', longitude: '16.35743')
 aquarium1_photo = URI.open("https://img.itinari.com/pages/images/original/1a2deecd-64db-4a3e-b00f-d72ff18b8975-1.jpg?ch=DPR&dpr=2.625&w=1600&s=78571e119ae290c654d15d52b9d0d61a")
 aquarium1.photo.attach(io: aquarium1_photo, filename: "aquarium1.png", content_type: "image/png")
 
-zoo1 = Activity.create!(name: 'Zoo', category: CATEGORY[12], description: 'Cute animals from all continents walk around this beautiful zoo', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20497', longitude: '16.35748')
+zoo1 = Activity.create!(name: 'Zoo', category: CATEGORY[12], description: 'Cute animals from all continents walk around this beautiful zoo', price: 20, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20497', longitude: '16.35748')
 zoo1_photo = URI.open("https://www.donauturm.at/assets/Uploads/Elements/Partner/Tiergarten/SEO-02_Grosser-Panda-Pavillon-TSEO-Tiergarten-Schoenbrunn-Giant-Pandas-Pavilion-Zoo-Vienna-+Headquarter-Daniel-Zupanc.jpg")
 zoo1.photo.attach(io: zoo1_photo, filename: "zoo1.png", content_type: "image/png")
 
-cycling1 = Activity.create!(name: 'Cycling', category: CATEGORY[13], description: 'One of the best ways to see the city', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20498', longitude: '16.35742')
+cycling1 = Activity.create!(name: 'Cycling', category: CATEGORY[13], description: 'One of the best ways to see the city', price: 10, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20498', longitude: '16.35742')
 cycling1_photo = URI.open("https://www.wien.info/resource/image/291246/3x2/832/561/4f5fe7f1ccaa8f3c8bd8cf41c58c8597/AC0CC7E36898973162403A5709EE676A/50150-radfahren-fahrrad-ringstrasse-radweg.webp")
 cycling1.photo.attach(io: cycling1_photo, filename: "cycling1.png", content_type: "image/png")
 
-drinks1 = Activity.create!(name: 'Drinks', category: CATEGORY[14], description: 'Top location, nice crowd', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20492', longitude: '16.35748')
+drinks1 = Activity.create!(name: 'Drinks', category: CATEGORY[14], description: 'Top location, nice crowd', price: 40, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20492', longitude: '16.35748')
 drinks1_photo = URI.open("https://frynx.at/wp-content/uploads/2019/12/Die-5-ausgefallensten-Cocktailbars-in-Wien.jpg")
 drinks1.photo.attach(io: drinks1_photo, filename: "drinks1.png", content_type: "image/png")
 
-clubbing1 = Activity.create!(name: 'Clubbing', category: CATEGORY[15], description: 'The best DJs from all around the world come and play here', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20499', longitude: '16.35743')
+clubbing1 = Activity.create!(name: 'Clubbing', category: CATEGORY[15], description: 'The best DJs from all around the world come and play here', price: 60, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20499', longitude: '16.35743')
 clubbing1_photo = URI.open("https://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/06/vienna-nightlife-cover-001.jpg")
 clubbing1.photo.attach(io: clubbing1_photo, filename: "clubbing1.png", content_type: "image/png")
 
-yoga1 = Activity.create!(name: 'Yoga', category: CATEGORY[16], description: 'Relax and grab a latte in our yoga cafe', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20494', longitude: '16.35743')
+yoga1 = Activity.create!(name: 'Yoga', category: CATEGORY[16], description: 'Relax and grab a latte in our yoga cafe', price: 30, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20494', longitude: '16.35743')
 yoga1_photo = URI.open("https://americaninvienna.com/wp-content/uploads/2018/03/ginny-rose-stewart-UxkcSzRWM2s-unsplash-scaled.jpg")
 yoga1.photo.attach(io: yoga1_photo, filename: "yoga1.png", content_type: "image/png")
 
-wellness1 = Activity.create!(name: 'Wellness', category: CATEGORY[17], description: 'Escape from the city while staying in the very center of Vienna', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20493', longitude: '16.35744')
+wellness1 = Activity.create!(name: 'Wellness', category: CATEGORY[17], description: 'Escape from the city while staying in the very center of Vienna', price: 50, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20493', longitude: '16.35744')
 wellness1_photo = URI.open("https://cf.bstatic.com/xdata/images/xphoto/1020x340/48362219.jpg?k=07f5d0117a3bafbf346e20c7d4f633093081d6a6b9b9aeda66fd2687b510fbf4&o=")
 wellness1.photo.attach(io: wellness1_photo, filename: "wellness1.png", content_type: "image/png")
 
-nails1 = Activity.create!(name: 'Nails', category: CATEGORY[18], description: 'Quick and with top service overall', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20495', longitude: '16.35743')
+nails1 = Activity.create!(name: 'Nails', category: CATEGORY[18], description: 'Quick and with top service overall', price: 20, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20495', longitude: '16.35743')
 nails1_photo = URI.open("https://soleilnailspavienna.com/uploads/fdemoi55cqzj7/logo/2019/06/25/thumbnail/1_1561522016_92_asd-w768.png")
 nails1.photo.attach(io: nails1_photo, filename: "nails1.png", content_type: "image/png")
 
 hair_dresser1 = Activity.create!(name: 'Hair dresser', category: CATEGORY[19], description: 'Queens and princesses like to come here', price: 80, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20494', longitude: '16.35742')
 hair_dresser1_photo = URI.open("https://images.fresha.com/lead-images/placeholders/hair-salon-81.jpg?class=venue-gallery-mobile")
 hair_dresser1.photo.attach(io: hair_dresser1_photo, filename: "hair_dresser1.png", content_type: "image/png")
+
+concert1 = Activity.create!(name: 'Concert', category: CATEGORY[20], description: 'International famous bands playing here', price: 40, address: "Arthur-Schnitzler-Platz 1, 1070 Wien, Austria", latitude: '48.20495', longitude: '16.35741')
+concert1_photo = URI.open("https://www.europavox.com/wp-content/uploads/2021/01/0003_europavox_festival_at_wuk_theodore-c-Alex-Galler.jpg")
+concert1.photo.attach(io: concert1_photo, filename: "concert.png", content_type: "image/png")
 
 review1 = Review.create!(rating: 5, content: "Wow!! Amazing experience! Worth going there just for the building :) I couldn't stop looking at the ceiling before the show started!!", user: svetlana, activity: opera4)
 review1_photo1 = URI.open("https://www.myo.org/wp-content/uploads/2015/03/Vienna-State-Opera-House.jpg")
@@ -257,4 +261,5 @@ memory1.photos.attach(io: memory1_photo20, filename: "memory1photo20.png", conte
   wellness1,
   nails1,
   hair_dresser1,
+  concert1,
   memory1].each(&:save)
