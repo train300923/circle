@@ -7,23 +7,24 @@
     <h2 id="left-alignment"><strong><%= "#{@activity.name}" %></strong></h2>
     <p class="description"><%= "#{@activity.description}" %></p>
   </div>
-  <div class="row" id="btn-link">
+  <div class="col-12" id="btn-link">
 
   <%# <div> %>
   <%# <%= button_to "Go!", activity_bookings_path(@activity), method: :post, form_class: "create" %>
   <%# </div> %>
-  <div id="button-review">
-  <%= button_to 'Reviews', activity_reviews_path(@activity), method: :get, class: 'review-button', form_class: "index" %></div>
-  <div>
-  <%= button_to "Go", activity_bookings_path(@activity), class: 'submit-button', method: :post, form_class: "create" %>
-</div>
-
+  <div class="d-flex col-12 justify-content-between">
+    <div id="button-review">
+      <%= button_to 'Reviews', activity_reviews_path(@activity), method: :get, class: 'review-button', form_class: "index" %></div>
+    <div>
+      <%= button_to "Go", activity_bookings_path(@activity), class: 'submit-button', method: :post, form_class: "create" %>
+    </div>
+  </div>
   </div>
   <div class="row" id="row-sub">
     <div id="reservation-details-box">
-      Reservation details:<br>
-      <%= "Date: #{@date}"%><br>
-      <%= "Time: #{@time}"%><br>
+      Reservation details:
+      <%= "#{@date}"%>
+      <%= " at #{@time}"%>
     </div>
     <div>
       <div style="width: 100%; height: 200px;"
