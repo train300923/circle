@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #F5EEE6;
-  background: linear-gradient(to left, transparent -20%, purple);
+  // background: #F5EEE6;
+  background: purple;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -28,6 +28,7 @@
 }
 .nav-item {
   padding-top: 15px;
+  color: white;
 }
 .dropdown-item {
   text-align: right;
