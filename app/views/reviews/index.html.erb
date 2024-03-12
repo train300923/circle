@@ -1,5 +1,11 @@
 <div class="container">
-  <div class="back-button mt-2"><%= link_to "Back", :back %></div>
+  <div class="container">
+    <div class="col-12 mt-2">
+      <div class="d-flex justify-content-start">
+        <div class="back-button mt-2"><%= link_to "Back", :back %></div>
+      </div>
+    </div>
+  </div>
   <% @reviews.each do |review| %>
     <div class="container-review">
       <div class="col-12 mt-2">

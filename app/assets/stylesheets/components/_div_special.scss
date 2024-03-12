@@ -8,8 +8,8 @@
   height: 100vh;
 }
 .positioned-above {
-  position: absolute;
-  top: 90px; /* Adjust this value to position the button higher or lower */
+  position: fixed;
+  top: 750px; /* Adjust this value to position the button higher or lower */
   left: 54%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust horizontally to truly center based on the element's width */
   z-index: 10; /* Ensure it's above the background */
@@ -30,9 +30,9 @@
   background-color: white;
 }
 .blank {
-  height: 820px;
   width: 100%;
   margin: auto;
+  flex-grow: 1;
 }
 .circle-logo-big {
   margin-top: 60px;

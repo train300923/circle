@@ -11,14 +11,14 @@
   background-color: #FCBAD3;
   color: $black;
   border-radius: 15px;
-  width: 50px;
+  width: 80px;
   height: 40px;
   margin-right: 0px;
   margin-left: 0px;
   margin-bottom: 0px;
   margin-top: 0px;
-  size: 30px;
 }
+
 .sign-in-sign-up {
   border: 1px solid $gray;
   margin-left: 5px;
@@ -104,7 +104,7 @@
   margin-bottom: 0px;
   margin-top: 0px;
   size: 30px;
-  margin: 0 auto; /* Automatically calculate left and right margins */
+  // margin: 0 auto; /* Automatically calculate left and right margins */
 }
 .back-button a{
   color: black;
@@ -132,7 +132,11 @@
 }
 .send-a-message{
   background-color: #FCBAD3;
+  color: black;
   border-radius: 10px 10px 10px 10px;
   height: 40px;
   box-shadow: 1px 1px 1px 1px;
+}
+#back-button-bookings{
+  width: 150px;
 }

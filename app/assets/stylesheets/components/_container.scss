@@ -11,3 +11,13 @@ padding: 5px;
 box-shadow: 2px 2px 2px 2px;
 margin-top: 15px;
 }
+
+.video-background video {
+  position: fixed; /* or absolute */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -100;  /* Ensures video stays in the background */
+}
