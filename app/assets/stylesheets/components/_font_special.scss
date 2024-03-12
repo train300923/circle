@@ -17,7 +17,8 @@
   color: purple;
   background-color: white;
   margin-left: 0px;
-  box-shadow: 2px 2px 2px 2px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
+  border-radius: 5px;
 }
 .circle-comment{
   color: grey;
@@ -28,7 +29,7 @@
   font-size: 25px;
 }
 #padding-title1{
-  padding: 20px;
+  padding: 15px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 0px;
