@@ -1,5 +1,3 @@
-<%# <div class="container2"> %>
-
   <div class="video-background">
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
       <source src="/videos/Happywomen.mp4" type="video/mp4">
@@ -7,9 +5,15 @@
     </video>
   </div>
 
-  <div class="row justify-content-center positioned-above">
+
+  <div class="row justify-content-center">
     <% if user_signed_in? %>
-      <%= link_to "Go!", pages_home_path, class: "small-btn-landing-page" %>
+      <div class="row justify-content-center positioned-top p-0">
+        <%= image_tag "circle_logo_full_transparent.png", height: 173, width: 146, alt: "Logotransparent", class:"dimension p-0" %>
+      </div>
+      <div class="row justify-content-center positioned-above p-0">
+        <%= link_to "Go!", pages_home_path, class: "small-btn-landing-page" %>
+      </div>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, class: "link-color btn small-btn sign-in-sign-up" %>
       <%= link_to "Sign in", new_user_session_path, class: "link-color btn small-btn btn-outline sign-in-sign-up" %>
@@ -17,5 +21,3 @@
   </div>
 
   <div class="blank"></div>
-
-<%# </div> %>
