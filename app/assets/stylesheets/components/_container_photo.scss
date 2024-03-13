@@ -97,6 +97,7 @@ img {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+  border-radius: 5px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -108,11 +109,13 @@ img {
   display: flex;
   justify-content: center;
   padding: 5px;
+  border-radius: 5px;
 
   img {
     width: 83.5px;
     height: 125.25px;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   img.popup {
@@ -125,6 +128,7 @@ img {
     border-width: 2px;
     object-fit: contain;
     object-position: center;
+    border-radius: 5px;
   }
 
 }

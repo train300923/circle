@@ -2,12 +2,12 @@
   <div class="d-flex justify-content-center my-5 py-0">
     <div class="parent">
       <div class="container" id="form-format">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center container-form">
           <%= simple_form_for(:search, url: activities_path, method: :get) do |f| %>
             <%# <%= f.input :date %>
             <%= f.input :date,
               as: :string,
-              input_html: { data: { controller: "datepicker" } } %>
+              input_html: { data: { controller: "datepicker" } , class: "form-field" } %>
             <%= f.input :time%>
             <%# <%= f.input :time,
               as: :string,
