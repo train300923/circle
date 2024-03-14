@@ -1,3 +1,7 @@
+ <% content_for :meta_title, "#{@activity.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+ <% content_for :meta_description, @activity.description %>
+ <% content_for :meta_image, cl_image_path(@activity.photo.path) %>
+
 <div class="container">
   <h1 pb-10><strong>Check details and location</strong></h1>
   <div class="container_photo">
