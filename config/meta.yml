@@ -1,6 +1,6 @@
 # config/meta.yml
  meta_product_name: "Circle"
- meta_title: "Circle - the afe network for like-minded busy women"
+ meta_title: "Circle - the safe network for like-minded busy women"
  meta_description: "Organise your events if you are a busy women who wants to spend good time and meet new people but dont have time for organising"
  meta_image: "circle_logo_full_transparent.png" # should exist in `app/assets/images/`
  twitter_account: "@product_twitter_account" # required for Twitter Cards
