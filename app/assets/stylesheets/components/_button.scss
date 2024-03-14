@@ -36,7 +36,9 @@
   align-items: center;
   justify-content: center;
   background-color: #FCBAD3;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
   color: $black;
+  border: none;
   border-radius: 15px;
   width: 100px;
   height: 40px;
@@ -76,6 +78,8 @@
   background-color: #9ef7c6;
   color: $black;
   border-radius: 15px;
+  border: none;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
   width: 100px;
   height: 40px;
   margin-right: 0px;
@@ -95,6 +99,7 @@
   align-items: center;
   justify-content: center;
   background-color: #FCBAD3;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
   color: $black;
   border-radius: 15px;
   width: 100px;

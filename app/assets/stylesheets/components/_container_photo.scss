@@ -21,6 +21,7 @@ img {
     border-radius: 50%;
     object-fit: cover;
     padding: 0px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
     }
 }
 .container-photo-round2 {
@@ -37,6 +38,7 @@ img {
     border-radius: 50%;
     object-fit: cover;
     padding: 0px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
     }
 }
 .container-photo-round-booking {
@@ -62,12 +64,12 @@ img {
     justify-content: center;
     width: 350px;
     height: 200px;
-    padding: 15px 15px 15px 15px;
-    border-radius: 5% 0% 5% 0%;
-    box-shadow: 2px 2px 2px 2px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: grey;
+    background-color: rgb(233, 198, 227);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -76,12 +78,12 @@ img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 5px;
     }
     }
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgb(233, 198, 227);
   padding-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -95,22 +97,26 @@ img {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+  border-radius: 5px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
   position: relative;
   border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 }
 
 .photo-container-memory{
   display: flex;
   justify-content: center;
   padding: 5px;
+  border-radius: 5px;
 
   img {
     width: 83.5px;
     height: 125.25px;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   img.popup {
@@ -123,6 +129,7 @@ img {
     border-width: 2px;
     object-fit: contain;
     object-position: center;
+    border-radius: 5px;
   }
 
 }
@@ -146,5 +153,5 @@ img {
   margin-right: 10px;
   margin-left: 10px;
   border-radius: 5px;
-  box-shadow: rgba(0,0,0,0.7);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 }

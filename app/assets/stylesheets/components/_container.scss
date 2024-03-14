@@ -8,8 +8,9 @@
 .container-review {
 background-color: white;
 padding: 5px;
-box-shadow: 2px 2px 2px 2px;
+box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 margin-top: 15px;
+border-radius: 5px;
 }
 
 .video-background video {
@@ -20,4 +21,10 @@ margin-top: 15px;
   height: 100vh;
   object-fit: cover;
   z-index: -100;  /* Ensures video stays in the background */
+}
+.container-form {
+  width: 400px;
+}
+.form-field{
+text-align: center;
 }
