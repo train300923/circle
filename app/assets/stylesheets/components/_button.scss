@@ -64,12 +64,14 @@
   margin-top: 0px;
   size: 30px;
   margin: 0 auto; /* Automatically calculate left and right margins */
+  border: none;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 }
 
 #button-save-participations {
   text-align: right;
   margin-top: 25px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 .review-button {
   display: flex;

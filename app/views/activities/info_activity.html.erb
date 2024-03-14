@@ -8,7 +8,7 @@
             <%= f.input :date,
               as: :string,
               input_html: { data: { controller: "datepicker" } , class: "form-field" } %>
-            <%= f.input :time%>
+            <%= f.input :time, input_html: {class: "form-field"} %>
             <%# <%= f.input :time,
               as: :string,
               input_html: { data: { controller: "flatpickr",
@@ -18,7 +18,7 @@
                 time_24hr: "true"
                 }
               }%>
-            <%= f.input :maximum_price %>
+            <%= f.input :maximum_price, input_html: {class: "form-field"} %>
             <%= f.hidden_field :city, value: params[:query] %>
             <%= f.hidden_field :category, value: params[:category] %>
             <%= f.submit "Submit", class: "submit-button" %>
