@@ -1,13 +1,12 @@
 <h1 id="padding-title1">Now, pick your favorite spot!</h1>
 <div class="container">
   <% if !@activities.nil? %>
-    <% @activities.each do |activity|%>
+    <% @activities.each do |activity| %>
         <div class="container_photo">
           <%= cl_image_tag activity.photo.key if activity.photo.attached? %>
         </div>
         <div id="activity-photo">
-          <div><%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %>
-          </div>
+          <%= link_to activity.name, activity_path(activity, city: @city, date: @date, time: @time, max_price: @max_price, category: @category) %>
         </div>
     <% end %>
   <% end %>

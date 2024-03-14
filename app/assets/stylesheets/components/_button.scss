@@ -64,12 +64,14 @@
   margin-top: 0px;
   size: 30px;
   margin: 0 auto; /* Automatically calculate left and right margins */
+  border: none;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 }
 
 #button-save-participations {
   text-align: right;
   margin-top: 25px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 .review-button {
   display: flex;
@@ -121,6 +123,8 @@
   margin: 3px;
   background-color: #9ef7c6;
   border-radius: 15px;
+  border: none;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 }
 .delete{
   width: 90px;
@@ -128,19 +132,23 @@
   padding: 8px;
   background-color: rgb(177, 88, 121);
   border-radius: 15px;
+  border: none;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
   color: $white;
 }
 .delete a{
   background-color: rgb(177, 88, 121);
   color: white;
   font-weight: normal;
+  border: none;
 }
 .send-a-message{
   background-color: #FCBAD3;
   color: black;
   border-radius: 10px 10px 10px 10px;
+  border: none;
   height: 40px;
-  box-shadow: 1px 1px 1px 1px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.7);
 }
 #back-button-bookings{
   width: 150px;
