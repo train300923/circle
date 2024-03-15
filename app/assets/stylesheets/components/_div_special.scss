@@ -82,8 +82,13 @@
 
   }
 .logo-holder{
-  img {
-    height: 126px;
-    width: 165px;
+  margin: 0px;
+  padding: 0px;
+  a{
+    margin-right: 35px;
+    img {
+      height: 126px;
+      width: 175px;
+    }
   }
 }
