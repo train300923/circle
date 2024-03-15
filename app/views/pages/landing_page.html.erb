@@ -8,8 +8,8 @@
 
   <div class="row justify-content-center">
     <% if user_signed_in? %>
-      <div class="row justify-content-center positioned-top p-0">
-        <%= image_tag "circle_logo_full_transparent.png", height: 173, width: 146, alt: "Logotransparent", class:"dimension p-0" %>
+      <div class="row justify-content-center positioned-top p-0 logo-holder">
+        <%= link_to image_tag("circle_logo_full_transparent.png"), pages_home_path, height: 173, width: 146, alt: "Logotransparent", class:"dimension p-0" %>
       </div>
       <div class="row justify-content-center positioned-above p-0">
         <%= link_to "Go!", pages_home_path, class: "small-btn-landing-page" %>
