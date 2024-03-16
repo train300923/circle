@@ -3,25 +3,16 @@
     <div class="parent">
       <div class="container" id="form-format">
         <div class="row justify-content-center container-form">
-          <%= simple_form_for(:search, url: activities_path, method: :get) do |f| %>
-            <%# <%= f.input :date %>
+          <%= simple_form_for(:search, url: activities_path, method: :get, html:{ data: { controller: "price-slider" }}) do |f| %>
             <%= f.input :date,
               as: :string,
               input_html: { data: { controller: "datepicker" } , class: "form-field" } %>
-            <%= f.input :time, input_html: {class: "form-field"} %>
-            <%# <%= f.input :time,
-              as: :string,
-              input_html: { data: { controller: "flatpickr",
-                enable_time: "true",
-                no_calendar: "true",
-                date_format: "H:i",
-                time_24hr: "true"
-                }
-              }%>
-            <%= f.input :maximum_price, input_html: {class: "form-field"} %>
+            <%= f.input :time, input_html: { data: { controller: "timepicker"}, class: "form-field" } %>
+            <%= f.input :maximum_price, as: :range, label: 'Maximum price', input_html: { min: 0, max: 1000, step: 10, data: { action: "change->price-slider#update" }, class: "form-field" } %>
+              <span data-price-slider-target="output">500 USD</span>
             <%= f.hidden_field :city, value: params[:query] %>
             <%= f.hidden_field :category, value: params[:category] %>
-            <%= f.submit "Submit", class: "submit-button" %>
+            <%= f.submit "Submit", class: "submit-button", id: "button-spacing" %>
           <% end %>
         </div>
       </div>
