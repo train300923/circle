@@ -145,6 +145,7 @@
 .send-a-message{
   background-color: #FCBAD3;
   color: black;
+  font-size: 14px;
   border-radius: 10px 10px 10px 10px;
   border: none;
   height: 40px;
@@ -152,4 +153,7 @@
 }
 #back-button-bookings{
   width: 150px;
+}
+#button-spacing{
+  margin-top: 40px;
 }
